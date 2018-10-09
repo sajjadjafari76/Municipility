@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context=".IntroduceCity.Handicrafts.Handicrafts_KolashBafi">
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/KolashBafi_Pager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentTop="true" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/KolashBafi_Indigator"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_alignParentBottom="true"
+                    android:layoutDirection="ltr" />
+
+            </RelativeLayout>
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:id="@+id/GelimBafi_Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textSize="@dimen/Standard_Size_Text"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000"
+                android:text="این صنعت به‌عنوان یک هنر دستی و سنتی قدیمی و اصیل است که با ساقه‌های گندم در اندازه‌های مختلف با مهارت خاص و خلاقیت بافندگان تهیه می‌شود. این دست بافته‌ها با کاربری‌های سبد جهت حمل‌ونقل و نگهداری انگور، نگهداری نان (ناندانی) و تخم‌مرغ (تخم‌مرغ دانی) به کار می‌رود.
+
+رشته کلش بافی در بسیاری از روستاها و شهرهای شهرستان تاکستان- به علت وجود باغات فراوان انگور و کاربرد فراوان آن در فصل برداشت- در بین زنان این منطقه بسیار پرطرفدار بوده که متاًسفانه در حال حاضر از بین بافندگان فراوان این رشته، تنها چند بانوی پیشکسوت این هنر را زنده نگه‌داشته و به تولید آن اشتغال دارند.
+با توجه به نتایج حاصل از کاوش‌های باستان‌شناسی، در هزاره هفتم و ششم پیش از میلاد که هنوز چرخ سفالگری ابداع نشده بود، سفالگران از سبدها به‌عنوان قالب برای شکل‌دهی به ظروف سفالی استفاده می‌کرده‌اند. زمانی که گِل سفال هنوز خیس و مرطوب است آن را با توجه به شکل سبد، حالت داده و قبل از خشک شدن ظرف گلی، سبد را از آن جدا می‌کرده‌اند که اثر طرح سبد بر روی سطح ظرف سفالی باقی می‌ماند و یکی از راه‌های بازشناسی شیوه‌های سبدبافی در دوران باستان طرح‌های به‌جامانده در روی سفال است. در محوطه چهاربنه (سگزآباد) که قدمت آن به 6000 تا 5200 قبل از میلاد تاریخ‌گذاری شده این آثار شناسایی و معرفی‌شده است.
+"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</ScrollView>

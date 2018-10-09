@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="www.municipality.ir.takestanmunicipality">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:name=".AppController.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_2"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ElectronicServices" />
+        <activity
+            android:name=".Page_137"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".WebView_Electronic" />
+        <activity android:name=".IntroduceCity.Introduce_City" />
+        <activity android:name=".HostricalWorks.Historical_Works" />
+        <activity android:name=".TourismServices.Tourism_Services" />
+        <activity android:name=".IntroductionMunicipality.Introduction_Municipality" />
+        <activity android:name=".Religious_Prayers" />
+        <activity android:name=".MainPage">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Suggest_Criticism"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".Exit_Page" />
+        <activity android:name=".Recreation.Recreation"></activity>
+    </application>
+
+</manifest>

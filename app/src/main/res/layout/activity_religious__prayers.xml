@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="3dp"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/ElectronicServices_Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/back_toolbar_color"
+        android:elevation="4dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:id="@+id/IntroduceCity_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="اوقات شرعی"
+                android:textColor="#FFF" />
+
+            <ImageView
+                android:id="@+id/ReligiousPrayers_Backwards"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:paddingBottom="5dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/ic_left_arrow" />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/mosque" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.1" />
+
+            <LinearLayout
+                android:id="@+id/ReligiousPrayers_View"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.55"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                    android:id="@+id/ReligiousPrayers_Date"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                    android:id="@+id/ReligiousPrayers_Horizon"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.15"
+                    android:gravity="center"
+                    android:textColor="#232323"
+                    android:textSize="14sp" />
+
+                <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1.55" />-->
+
+                <!---->
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.1"
+                    android:orientation="vertical"
+                    android:weightSum="5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:weightSum="3">
+
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:id="@+id/ReligiousPrayers_Morning"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|right"
+                            android:text=" صبح"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ReligiousPrayers_img1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/ReligiousPrayers_Morning"
+                            android:layout_weight="1"
+                            android:src="@drawable/celtic_trasparent" />
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@id/ReligiousPrayers_img1"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:text="اذان صبح"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:weightSum="3">
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:id="@+id/ReligiousPrayers_Rise"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|right"
+                            android:text=" صبح"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ReligiousPrayers_img2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/celtic_trasparent" />
+
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:text="طلوع آفتاب"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:weightSum="3">
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:id="@+id/ReligiousPrayers_Noon"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|right"
+                            android:text=" صبح"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ReligiousPrayers_img3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/ReligiousPrayers_Morning"
+                            android:layout_weight="1"
+                            android:src="@drawable/celtic_trasparent" />
+
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_toRightOf="@id/ReligiousPrayers_img1"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:text="اذان ظهر"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:weightSum="3">
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:id="@+id/ReligiousPrayers_Sunset"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|right"
+                            android:text=" صبح"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ReligiousPrayers_img4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/celtic_trasparent" />
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:text="غروب آفتاب"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:weightSum="3">
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:id="@+id/ReligiousPrayers_West"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|right"
+                            android:text=" صبح"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:id="@+id/ReligiousPrayers_img5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:src="@drawable/celtic_trasparent" />
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical|left"
+                            android:text="اذان مغرب"
+                            android:textColor="#000"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ReligiousPrayers_View1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.55"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="خطایی رخ داد، لطفا دوباره تلاش کنید!"
+                    android:textColor="#000"/>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

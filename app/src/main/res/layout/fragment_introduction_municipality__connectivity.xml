@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroductionMunicipality.IntroductionMuncipality_About">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/meeting"
+                android:layout_margin="8dp"/>
+
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="آدرس الكترونيكي اختصاصي شهردار تاكستان مهندس حسين بهزادپور:"
+                android:textColor="#000"
+                android:textSize="@dimen/Standard_Size_Text"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"/>
+
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" h.behzadpour@takestancity.ir"
+                android:textColor="#000"
+                android:textSize="@dimen/Standard_Size_Text"
+                android:layout_margin="8dp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</ScrollView>

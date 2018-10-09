@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#22A7E5</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="First_Color_Gradient_Toolbar">#1999D5</color>
+    <color name="Second_Color_Gradient_Toolbar">#1999D5</color>
+
+    <color name="status_Color">#cee1ff</color>
+
+
+
+    <color name="back_card">#f5f5f5</color>
+</resources>

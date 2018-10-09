@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    android:id="@+id/ElectronicItem_Card"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:layout_marginTop="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardElevation="1dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/ElectronicItem_View1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFF"
+        android:visibility="visible">
+
+        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+            android:id="@+id/ElectronicItem_Text"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="پرداخت الکترونیک عوارض"
+            android:gravity="right|center_vertical"
+            android:layout_marginRight="3dp"
+            android:textColor="#000"/>
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_keyboard_arrow_left"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#dcdcdc"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ElectronicItem_View2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#FFF"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ElectronicItem_Image"
+            android:layout_width="60dp"
+            android:layout_height="52dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="4dp"
+            android:scaleType="fitXY"
+            android:contentDescription="@string/app_name"/>
+
+        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+            android:id="@+id/ElectronicItem_Text1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/ElectronicItem_Image"
+            android:text="پرداخت الکترونیک عوارض"
+            android:gravity="center"
+            android:textColor="#000"/>
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_keyboard_arrow_left"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="#dcdcdc"
+            android:layout_alignParentBottom="true"/>
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

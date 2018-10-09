@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-1dp"
+        android:background="#cee1ff"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <me.crosswall.lib.coverflow.core.PagerContainer
+            android:id="@+id/ActivityMain_PagerContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/ActivityMain_ViewPager"
+                android:layout_width="165dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp">
+
+            </android.support.v4.view.ViewPager>
+
+        </me.crosswall.lib.coverflow.core.PagerContainer>
+
+        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+            android:id="@+id/ActivityMain_Name"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:text="خدمات الکترونیکی شهرداری"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <me.relex.circleindicator.CircleIndicator
+            android:id="@+id/MainActivity_Indicator"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:layoutDirection="ltr"
+            app:ci_drawable="@drawable/back_indicator_selected"
+            app:ci_drawable_unselected="@drawable/back_indicator_unselected"
+            app:ci_height="6dp"
+            app:ci_width="6dp" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.8">
+
+            <ImageView
+                android:id="@+id/ActivityMain_Image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/app_name" />
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:id="@+id/ActivityMain_Content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/back_text"
+                android:lines="1"
+                android:paddingBottom="3dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="3dp"
+                android:text="قز قلعه از جمله آثار اواخر دوره ی ساسانی یا اوایل اسلام می باشد."
+                android:textColor="#000"
+                android:textSize="12sp" />
+
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:id="@+id/ActivityMain_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/ActivityMain_Content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/back_text"
+                android:lines="1"
+                android:paddingBottom="3dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:paddingTop="3dp"
+                android:text="قز قلعه ( قلعه دختر )"
+                android:textColor="#000"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/MainActivity_Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ActivityMain_More"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_more" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+</RelativeLayout>

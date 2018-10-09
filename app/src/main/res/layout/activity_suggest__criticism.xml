@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Suggest_Criticism">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Suggest_Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:contentInsetStart="0dp"
+        android:elevation="4dp"
+        android:background="@drawable/back_toolbar_color">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:id="@+id/Suggest_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="پیشنهاد، انتقاد، گزارش خطا"
+                android:textColor="#FFF"
+                android:layout_centerInParent="true"/>
+
+            <ImageView
+                android:id="@+id/Suggest_Backwards"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_left_arrow"
+                android:paddingRight="14dp"
+                android:paddingLeft="14dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_alignParentLeft="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"/>
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Suggest_Toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dp">
+
+
+                    <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/back_message_137"
+                        android:hint="نام و نام خانوادگی"
+                        android:padding="8dp"
+                        android:textSize="16sp"
+                        android:id="@+id/Suggest_Criticism_Name"/>
+
+                    <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/back_message_137"
+                        android:hint="آدرس پست الکترونیکی"
+                        android:inputType="textEmailAddress"
+                        android:padding="8dp"
+                        android:textSize="16sp"
+                        android:id="@+id/Suggest_Criticism_Email"/>
+
+
+                    <Spinner
+                        android:id="@+id/Suggest_Spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/back_spinner"
+                        android:layoutDirection="rtl"
+                        android:popupBackground="#62ffffff"
+                        android:soundEffectsEnabled="true"
+                        android:spinnerMode="dialog"
+                        android:focusableInTouchMode="true" />
+
+
+                    <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/back_message_137"
+                        android:hint="متن پیام"
+                        android:lines="4"
+                        android:padding="8dp"
+                        android:textSize="16sp"
+                        android:id="@+id/Suggest_Criticism_Text"/>
+
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardElevation="2dp"
+                        android:layout_margin="16dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="24dp">
+
+                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                            android:id="@+id/Suggest_Criticism_Btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="ارسال نظر"
+                            android:textColor="#FFF"
+                            android:paddingBottom="12dp"
+                            android:paddingTop="12dp"
+                            android:paddingEnd="50dp"
+                            android:paddingStart="50dp"
+                            android:background="@color/colorPrimaryDark"/>
+
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

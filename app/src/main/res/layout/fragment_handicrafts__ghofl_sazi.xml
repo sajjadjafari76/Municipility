@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:orientation="vertical"
+    tools:context=".IntroduceCity.Handicrafts.Handicrafts_GhoflSazi">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/GhoflSazi_Pager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentTop="true" />
+
+                <me.relex.circleindicator.CircleIndicator
+                    android:id="@+id/GhoflSazi_Indigator"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_alignParentBottom="true"
+                    android:layoutDirection="ltr" />
+
+            </RelativeLayout>
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:id="@+id/GelimBafi_Text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textSize="@dimen/Standard_Size_Text"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000"
+                android:text="هنر قفل سازی هنری است که درآن با نقش زدن بر فلز، طرح‌های زیبا و دلنشین از نقوش تزئینی پدید آمده و این نقوش با اسطوره آمیخته می‌شود تا با این عمل شناسایی اسطوره‌ها و درک و دریافت فرهنگ و تمدن غنی و با شکوه ایران باستان امکان پذیر شود اما متاسفانه با ظهور عصر ماشین و تکنولوژی، زیبایی و ظرافت این هنر زیبا کم رنگ تر شده ولی هنوز هم در گوشه و کنار کسانی هستند که بر حسب علاقه و ذوق به هنر ظریف قفل سازی روی می‌آورند و مانع از زوال این هنرمی‌شوند.
+
+سعید بالوخانی هنرمند قفل سازی در روستای شیزند افشاریه بخش خرمدشت شهرستان تاکستان در یک خانواده هنرمند قفل ساز در سال 69 متولد شد .
+ایشان در کنار پدر و پدربزرگش به صورت تجربی قفل سازی را آموخت
+آقای سعید بالوخانی یکی از هنرمندان فعال واحدصنایع دستی اداره میراث فرهنگی شهرستان تاکستان می باشد که جشنواره حضرت علی اکبر – روز جوان در سال جاری بعنوان  جوان هنرمند و برتر شناخته شدند و در استان و شهرستان از ایشان تجلیل و تقدیر شد .
+این هنرمند در رشته قفل سازی در بین 31 استان کشور رتبه نخست را کسب نمود و نشان ملی مرغوبیت صنایع دستی را در رشته قفل سازی از آن خود کرد .
+که در تاریخ 26 اردیبشت ماه سال جاری توسط  دکتر مونسان معاون رییس جمهور و رییس سازمان و معاونت صنایع دستی کشور در میراث فرهنگی . صنایع دستی و گردشگری کشور از ایشان تجلیل شد .
+
+
+"/>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+</ScrollView>

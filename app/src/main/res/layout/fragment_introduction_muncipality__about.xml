@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".IntroductionMunicipality.IntroductionMuncipality_About">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_toLeftOf="@+id/IntroMunicipality_Image"
+                    android:layout_marginRight="12dp">
+
+                    <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#000"
+                        android:textSize="@dimen/Standard_Size_Text"
+                        android:text="آقای مهندس حسین بهزادپور" />
+
+                    <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textColor="#000"
+                        android:text="كارشناسي مديرت دولتي "
+                        android:textSize="@dimen/Standard_Size_Text" />
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:id="@+id/IntroMunicipality_Image"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:padding="8dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/behzadpour" />
+
+            </RelativeLayout>
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="18dp"
+                android:textSize="@dimen/Standard_Size_Text"
+                android:textColor="#000"
+                android:text="سوابق :
+    1- مسئول حراست شهرداري مركزي قزوين
+    2- مدير شهرداري منطقه 3 قزوين
+    3- مدير شهرداري منطقه 2 قزوين
+    4- مدير عامل سازمان آتش نشاني قزوين
+    5- معاون خدمات شهر شهرداري مركزي قزوين
+    6- شهردار محمديه
+    7- شهردار تاكستان "/>
+
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:textSize="@dimen/Standard_Size_Text"
+                android:textColor="#000"
+                android:text="اهداف :
+تلاش خواهیم کرد از همه دیدگاهها و نظرات مردم و دلسوزان شهری برای خدمت بهتر به شهر استفاده کنيم و دغدغه های مطرح شده را جدی خواهيم گرفت.  باید بپذیریم نسخه هایی که در گذشته برای تاکستان پیچیده شده تاکنون جواب نداده لذا باید روشهای مدیریت خود را عوض کنیم و با نگاهی  مردم باید تغییرات را در کوتاه مدت هم مشاهده کنند تا زمینه مشارکت آنها در کارها مهیا شود و در این راستا کارهای روبنایی را نیز مورد توجه قرار خواهیم داد. کمبود بودجه از مشکلات همیشگی است ولی ما باید دنبال منابع جدید مالی باشیم تا کارها متوقف نشود. از مردم انتظار دارم به جای اینکه از شهردار در مورد افراد سوال کنند فقط کار بخواهند و منافع عمومی را به مسائل شخصی ترجیح دهند لذا اعتقاد دارم شهرداری یک جایگاه سیاسی نیست و فقط باید خدمات ارائه دهد. ما نباید به مسائل نگاه سیاسی داشته باشیم و اگر فقط کار کنیم قضاوتها نیز عادلانه خواهد شد و دچار نگاه سیاسی نخواهد شد. در شورا سلیقه های مختلف حضور دارند که همه محترم هستند اما بهتر است نگاه سیاسی به مسائل نداشته باشیم و سیاسی بازی نکنیم. برای توسعه همه جانبه شهری مهمترین ملاک رضایت مردم است و هر جا احساس کنم کاری می تواند مردم را راضی کند آن را در اولویت قرار خواهم داد ."/>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</ScrollView>

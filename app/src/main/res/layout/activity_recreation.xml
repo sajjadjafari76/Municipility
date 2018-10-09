@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recreation.Recreation">
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Recreation_Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:contentInsetStart="0dp"
+        android:elevation="4dp"
+        android:background="@drawable/back_toolbar_color">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:id="@+id/Recreation_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="معرفی شهر"
+                android:textColor="#FFF"
+                android:layout_centerInParent="true"/>
+
+            <ImageView
+                android:id="@+id/Recreation_Backwards"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_left_arrow"
+                android:paddingRight="14dp"
+                android:paddingLeft="14dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_alignParentLeft="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/Recreation_Frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_below="@+id/Recreation_Toolbar"/>
+
+
+</RelativeLayout>
