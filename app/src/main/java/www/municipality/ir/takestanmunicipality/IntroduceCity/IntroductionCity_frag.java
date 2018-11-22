@@ -18,6 +18,7 @@ import java.util.List;
 
 import www.municipality.ir.takestanmunicipality.IntroduceCity.Celebrity.InroduceCity_Celebrities;
 import www.municipality.ir.takestanmunicipality.IntroduceCity.Handicrafts.IntrductionCity_Handicrafts;
+import www.municipality.ir.takestanmunicipality.IntroduceCity.Maps.IntroduceCity_MapsFrag;
 import www.municipality.ir.takestanmunicipality.IntroductionMunicipality.IntroduceCity_Image.IntroduceCity_Image;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
@@ -137,7 +138,7 @@ public class IntroductionCity_frag extends Fragment {
                             tag = "position";
                             break;
                         case 3:
-                            fragment = new IntroduceCity_Maps();
+                            fragment = new IntroduceCity_MapsFrag();
                             title.setText("نقشه شهر");
                             tag = "maps";
                             break;

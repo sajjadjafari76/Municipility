@@ -2,9 +2,6 @@ package www.municipality.ir.takestanmunicipality;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -17,48 +14,30 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-
-import org.json.JSONObject;
-
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Locale;
-import java.util.Random;
 
 import me.crosswall.lib.coverflow.CoverFlow;
 import me.crosswall.lib.coverflow.core.PagerContainer;
 import me.relex.circleindicator.CircleIndicator;
-import www.municipality.ir.takestanmunicipality.AppController.AppController;
 import www.municipality.ir.takestanmunicipality.HostricalWorks.Historical_Works;
 import www.municipality.ir.takestanmunicipality.IntroduceCity.Introduce_City;
 import www.municipality.ir.takestanmunicipality.IntroductionMunicipality.Introduction_Municipality;
-import www.municipality.ir.takestanmunicipality.Network.CustomRequest;
+import www.municipality.ir.takestanmunicipality.Page_137.Main_137;
+import www.municipality.ir.takestanmunicipality.Page_137.Page_137;
 import www.municipality.ir.takestanmunicipality.Recreation.Recreation;
 import www.municipality.ir.takestanmunicipality.TourismServices.Tourism_Services;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
-
-import static www.municipality.ir.takestanmunicipality.Globals.ApiURL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -80,12 +59,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (ChangeImage == 1) {
-            title.setText("بنیاد علوی");
-            content.setText("بنیاد علوی از جمله آثار اواخر");
+            title.setText("عمارت قدیمی بنیاد علوی");
+            content.setText("این بنا به عنوان یکی از آثار ملی ایران به ثبت رسیده است");
             image.setBackground(getResources().getDrawable(R.drawable.bonyad_alavi));
         }else if (ChangeImage == 2) {
-            title.setText("امام زاده صدوق ");
-            content.setText("بنای ساختمان بقعه متبرکه از آجر کوره های قدیمی ساخته شده است.");
+            title.setText("امام زاده هفت صندوق ");
+            content.setText("از بناهای قدیمی، دوران قاجار میباشد و در شهرستان تاکستان واقع شده است");
             image.setBackground(getResources().getDrawable(R.drawable.emamzadeh_sandogh));
         }else if (ChangeImage == 3) {
             title.setText("قز قلعه ( قلعه دختر )");
@@ -146,40 +125,42 @@ public class MainActivity extends AppCompatActivity {
                 switch (position) {
 
                     case 0:
-//                        name.animate().alpha(0).alphaBy(1).setDuration(600L);
-                        name.setText("خدمات الکترونیکی شهرداری");
-                        name.startAnimation(in);
-
-                        break;
-                    case 1:
-                        name.setText("معرفی شهر");
-                        name.startAnimation(in);
-                        break;
-                    case 2:
-                        name.setText("آثار تاریخی");
-                        name.startAnimation(in);
-                        break;
-                    case 3:
-                        name.setText("مراکز تفریحی");
-                        name.startAnimation(in);
-                        break;
-                    case 4:
-                        name.setText("خدمات گردشگری");
-                        name.startAnimation(in);
-                        break;
-                    case 5:
-                        name.setText("اوقات شرعی");
-                        name.startAnimation(in);
-                        break;
-                    case 6:
                         name.setText("سامانه ارتباط مردمی 137");
                         name.startAnimation(in);
                         break;
+                    case 1:
+                        name.setText("اخبار شهر");
+                        name.startAnimation(in);
+                        break;
+                    case 2:
+                        name.setText("خدمات الکترونیکی شهرداری");
+                        name.startAnimation(in);
+                        break;
+                    case 3:
+                        name.setText("معرفی شهر");
+                        name.startAnimation(in);
+                        break;
+                    case 4:
+                        name.setText("آثار تاریخی");
+                        name.startAnimation(in);
+                        break;
+                    case 5:
+                        name.setText("مراکز تفریحی");
+                        name.startAnimation(in);
+                        break;
+                    case 6:
+                        name.setText("خدمات گردشگری");
+                        name.startAnimation(in);
+                        break;
                     case 7:
-                        name.setText("معرفی شهرداری");
+                        name.setText("اوقات شرعی");
                         name.startAnimation(in);
                         break;
                     case 8:
+                        name.setText("معرفی شهرداری");
+                        name.startAnimation(in);
+                        break;
+                    case 9:
                         name.setText(getResources().getString(R.string.Report));
                         name.startAnimation(in);
                         break;
@@ -289,9 +270,14 @@ public class MainActivity extends AppCompatActivity {
 
     private class MyPagerAdapter extends PagerAdapter {
 
-        int[] myImage = {R.drawable.img_electronic_municipility, R.drawable.img_moarefi_shahr, R.drawable.img_asar_tarikhi,
-                R.drawable.img_tafrihi, R.drawable.img_gardeshgari, R.drawable.img_mecca,
-                R.drawable.img_137, R.drawable.img_aboutshahrdari, R.drawable.img_report};
+        int[] myImage = {R.drawable.img_137, R.drawable.img_resane_shahri, R.drawable.img_electronic_municipility,
+                R.drawable.img_moarefi_shahr, R.drawable.img_asar_tarikhi, R.drawable.img_tafrihi, R.drawable.img_gardeshgari,
+                R.drawable.img_mecca, R.drawable.img_aboutshahrdari, R.drawable.img_report};
+
+
+//        int[] myImage = {R.drawable.img_electronic_municipility, R.drawable.img_moarefi_shahr, R.drawable.img_asar_tarikhi,
+//                R.drawable.img_tafrihi, R.drawable.img_resane_shahri, R.drawable.img_gardeshgari, R.drawable.img_mecca,
+//                R.drawable.img_137, R.drawable.img_aboutshahrdari, R.drawable.img_report};
 
         @Override
         public Object instantiateItem(ViewGroup container, final int position) {
@@ -319,34 +305,37 @@ public class MainActivity extends AppCompatActivity {
 
                     switch (position) {
                         case 0:
-                            startActivity(new Intent(getApplicationContext(), ElectronicServices.class));
+                            startActivity(new Intent(getApplicationContext(), Main_137.class));
                             break;
                         case 1:
-                            startActivity(new Intent(getApplicationContext(), Introduce_City.class));
+                            startActivity(new Intent(getApplicationContext(), News.class));
                             break;
                         case 2:
-                            startActivity(new Intent(getApplicationContext(), Historical_Works.class));
+                            startActivity(new Intent(getApplicationContext(), ElectronicServices.class));
                             break;
                         case 3:
-                            startActivity(new Intent(getApplicationContext(), Recreation.class));
+                            startActivity(new Intent(getApplicationContext(), Introduce_City.class));
                             break;
                         case 4:
-                            startActivity(new Intent(getApplicationContext(), Tourism_Services.class));
+                            startActivity(new Intent(getApplicationContext(), Historical_Works.class));
                             break;
                         case 5:
+                            startActivity(new Intent(getApplicationContext(), Recreation.class));
+                            break;
+                        case 6:
+                            startActivity(new Intent(getApplicationContext(), Tourism_Services.class));
+                            break;
+                        case 7:
                             if (isOnline()) {
                                 startActivity(new Intent(getApplicationContext(), Religious_Prayers.class));
                             }else {
                                 Toast.makeText(MainActivity.this, "دسترسی به اینترنت موجود نیست!", Toast.LENGTH_SHORT).show();
                             }
                             break;
-                        case 6:
-                            startActivity(new Intent(getApplicationContext(), Page_137.class));
-                            break;
-                        case 7:
+                        case 8:
                             startActivity(new Intent(getApplicationContext(), Introduction_Municipality.class));
                             break;
-                        case 8:
+                        case 9:
                             startActivity(new Intent(getApplicationContext(), Suggest_Criticism.class));
                             break;
                     }

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="Standard_Size_Text">24sp</dimen>
+    <dimen name="Standard_Image">250dp</dimen>
 </resources>

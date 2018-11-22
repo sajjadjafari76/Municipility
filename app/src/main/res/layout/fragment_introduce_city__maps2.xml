@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".IntroduceCity.Maps.IntroduceCity_MapsFrag">
+
+   <!--  <android.support.design.widget.TabLayout
+         android:layout_width="match_parent"
+         android:layout_height="?android:attr/actionBarSize"
+         android:id="@+id/MapsFrag_TabLayout"
+         android:background="#F9F8FD"/>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/MapsFrag_ViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />-->
+
+
+    <www.municipality.ir.takestanmunicipality.Views.CustomButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="نقشه آنلاین"
+        android:id="@+id/CityMapOnline"/>
+
+    <www.municipality.ir.takestanmunicipality.Views.CustomButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="نقشه آفلاین"
+        android:id="@+id/CityMapOffline"/>
+
+</LinearLayout>

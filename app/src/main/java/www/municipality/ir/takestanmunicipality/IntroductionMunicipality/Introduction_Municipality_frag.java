@@ -86,23 +86,20 @@ public class Introduction_Municipality_frag extends Fragment {
                 String text = new String();
                 text = "قوانین شهرداری";
                 data.add(text);
+//            }
+//            else if (i==4) {
+//                String text = new String();
+//                text = "معاونت ها و سازمان ها";
+//                data.add(text);
             }else if (i==4) {
-                String text = new String();
-                text = "معرفی شهرداران قبلی";
-                data.add(text);
-            }else if (i==5) {
-                String text = new String();
-                text = "معاونت ها و سازمان ها";
-                data.add(text);
-            }else if (i==6) {
                 String text = new String();
                 text = "برنامه های شهردار در افق 1400";
                 data.add(text);
-            }else if (i==7) {
+            }else if (i==5) {
                 String text = new String();
                 text = "فلوچارت کاری شهرداری";
                 data.add(text);
-            }else if (i==8) {
+            }else if (i==6) {
                 String text = new String();
                 text = "آرم شهرداری تاکستان";
                 data.add(text);
@@ -161,27 +158,22 @@ public class Introduction_Municipality_frag extends Fragment {
                             title.setText("قوانین شهرداری");
                             tag = "maps";
                             break;
+//                        case 4:
+//                            fragment = new IntroductionMunicipility_Assistant(title);
+//                            title.setText("معاونت ها و سازمان ها");
+//                            tag = "maps";
+//                            break;
                         case 4:
-                            fragment = new IntroduceMunicipility_Mayor();
-                            title.setText("معرفی شهرداران قبلی");
-                            tag = "maps";
-                            break;
-                        case 5:
-                            fragment = new IntroductionMunicipility_Assistant(title);
-                            title.setText("معاونت ها و سازمان ها");
-                            tag = "maps";
-                            break;
-                        case 6:
                             fragment = new IntroductionMunicipility_Program();
                             title.setText("برنامه های شهردار در افق 1400");
                             tag = "maps";
                             break;
-                        case 7:
+                        case 5:
                             fragment = new IntroduceCity_Image(title);
                             title.setText("فلوچارت کاری شهرداری");
                             tag = "maps";
                             break;
-                        case 8:
+                        case 6:
                             fragment = new IntroductionMunicipality_Logo();
                             title.setText("آرم شهرداری تاکستان");
                             tag = "maps";

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "557796890886",
+    "firebase_url": "https://takestan-municipility.firebaseio.com",
+    "project_id": "takestan-municipility",
+    "storage_bucket": "takestan-municipility.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557796890886:android:4939f3948e053887",
+        "android_client_info": {
+          "package_name": "www.municipality.ir.takestanmunicipality"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557796890886-eams8o041ksejfbr33nhnruj4uskr065.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "www.municipality.ir.takestanmunicipality",
+            "certificate_hash": "8369205e4bd06d60ba325db2629d4d71b6d135b1"
+          }
+        },
+        {
+          "client_id": "557796890886-7ilgirdhf7q3jh1ei53e33aepel86e95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUupMnsqrIuBPYKkhKTtA4dbEQ7FLQ7sg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557796890886-7ilgirdhf7q3jh1ei53e33aepel86e95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

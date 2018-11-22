@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo"
+        android:id="@+id/logo"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ضبط"
+        android:textSize="20sp"
+        android:id="@+id/record"
+        android:layout_below="@id/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="توقف"
+        android:textSize="20sp"
+        android:id="@+id/stop"
+        android:layout_below="@id/record"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="پخش"
+        android:textSize="20sp"
+        android:id="@+id/play"
+        android:layout_below="@id/stop"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        />
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="ارسال"
+        android:textSize="16dp"
+        android:textColor="#000"
+        android:padding="8dp"
+        android:id="@+id/RecordVoice_Send"/>
+</RelativeLayout>

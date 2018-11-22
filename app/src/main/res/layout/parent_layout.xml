@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Parent_Card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/Parent_Btn">
+
+        <com.github.florent37.expansionpanel.ExpansionHeader
+            android:id="@+id/Parent_Header"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#F4F4F4"
+            app:expansion_headerIndicator="@id/headerIndicator"
+            app:expansion_layout="@id/Parent_Layout"
+            app:expansion_toggleOnClick="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="#FFF"
+                android:paddingEnd="5dp"
+                android:paddingStart="5dp"
+                android:paddingTop="5dp"
+                android:id="@+id/Parent_MyHeader">
+
+                <ImageView
+                    android:id="@+id/TrackingCode_Image"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_check_mark" />
+
+                <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                    android:id="@+id/Parent_Content"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/TrackingCode_Image"
+                    android:gravity="center_vertical|right"
+                    android:text="سجاد جعفری"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+
+                <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                    android:id="@+id/Parent_Code"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/Parent_Content"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/TrackingCode_Image"
+                    android:gravity="right|center_vertical"
+                    android:text="سجاد جعفری"
+                    android:textColor="#666"
+                    android:textSize="12sp" />
+
+
+                <ImageView
+                    android:id="@+id/headerIndicator"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:padding="5dp"
+                    android:src="@drawable/left_chevron" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#999" />
+
+
+            </RelativeLayout>
+
+
+        </com.github.florent37.expansionpanel.ExpansionHeader>
+
+        <com.github.florent37.expansionpanel.ExpansionLayout
+            android:id="@+id/Parent_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:expansion_expanded="false"
+            android:background="#ecf0f1">
+
+            <!-- CONTENT -->
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:id="@+id/Parent_ViewChild1">
+
+                <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/Parent_Date"
+                    android:textSize="13sp"/>
+
+                <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Parent_Date"
+                    android:layout_margin="12dp"
+                    android:textSize="@dimen/Standard_Size_Text"
+                    android:textColor="#000"
+                    android:id="@+id/Parent_Response"/>
+
+
+                <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/Parent_Response"
+                    android:layout_margin="12dp"
+                    android:textSize="@dimen/Standard_Size_Text"
+                    android:textColor="#000"
+                    android:id="@+id/Parent_Info"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="3dp"
+                    android:background="#999"/>
+
+
+                </RelativeLayout>
+
+
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/Parent_Progress"/>
+
+            </RelativeLayout>
+
+
+        </com.github.florent37.expansionpanel.ExpansionLayout>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

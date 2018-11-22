@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Page_137"
-    android:background="#f4f4f4">
+    android:background="#f4f4f4"
+    tools:context=".Page_137.Page_137">
 
 
     <android.support.v7.widget.Toolbar
@@ -30,7 +30,7 @@
 
 
             <ImageView
-                android:id="@+id/Spage_137_Backwards"
+                android:id="@+id/page_137_Backwards"
                 android:layout_width="wrap_content"
                 android:layout_height="56dp"
                 android:layout_centerVertical="true"
@@ -87,62 +87,62 @@
                         android:layout_width="match_parent"
                         android:layout_height="46dp"
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="18dp"
-                        android:layout_marginLeft="18dp"
                         android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginTop="8dp"
                         android:background="@drawable/back_spinner"
+                        android:focusableInTouchMode="true"
                         android:layoutDirection="rtl"
                         android:popupBackground="#62ffffff"
                         android:soundEffectsEnabled="true"
-                        android:spinnerMode="dialog"
-                        android:focusableInTouchMode="true" />
+                        android:spinnerMode="dialog" />
 
                     <!--<Spinner-->
-                        <!--android:id="@+id/Page_137_SpinnerRegion"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="46dp"-->
-                        <!--android:layout_centerHorizontal="true"-->
-                        <!--android:layout_marginTop="8dp"-->
-                        <!--android:layout_marginRight="18dp"-->
-                        <!--android:layout_marginLeft="18dp"-->
-                        <!--android:layout_marginBottom="8dp"-->
-                        <!--android:background="@drawable/back_spinner"-->
-                        <!--android:layoutDirection="rtl"-->
-                        <!--android:popupBackground="#62ffffff"-->
-                        <!--android:soundEffectsEnabled="true"-->
-                        <!--android:spinnerMode="dialog"-->
-                        <!--android:saveEnabled="true"/>-->
+                    <!--android:id="@+id/Page_137_SpinnerRegion"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="46dp"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginTop="8dp"-->
+                    <!--android:layout_marginRight="18dp"-->
+                    <!--android:layout_marginLeft="18dp"-->
+                    <!--android:layout_marginBottom="8dp"-->
+                    <!--android:background="@drawable/back_spinner"-->
+                    <!--android:layoutDirection="rtl"-->
+                    <!--android:popupBackground="#62ffffff"-->
+                    <!--android:soundEffectsEnabled="true"-->
+                    <!--android:spinnerMode="dialog"-->
+                    <!--android:saveEnabled="true"/>-->
 
 
                     <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+                        android:id="@+id/Page_137_Text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginRight="18dp"
-                        android:layout_marginLeft="18dp"
                         android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginTop="20dp"
                         android:background="@drawable/back_message_137"
-                        android:hint="متن پیام"
+                        android:hint="*متن پیام"
                         android:lines="5"
                         android:padding="8dp"
-                        android:textSize="16sp"
-                        android:id="@+id/Page_137_Text"/>
+                        android:textSize="16sp" />
 
 
                     <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+                        android:id="@+id/Page_137_Address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="18dp"
-                        android:layout_marginLeft="18dp"
                         android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginTop="8dp"
                         android:background="@drawable/back_message_137"
                         android:hint="*نشانی"
                         android:lines="2"
                         android:padding="8dp"
-                        android:textSize="16sp"
-                        android:id="@+id/Page_137_Address"/>
+                        android:textSize="16sp" />
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -169,31 +169,47 @@
 
 
                     <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+                        android:id="@+id/Page_137_Name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="18dp"
-                        android:layout_marginLeft="18dp"
                         android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginTop="8dp"
                         android:background="@drawable/back_message_137"
                         android:hint="*نام"
                         android:padding="8dp"
-                        android:textSize="16sp"
-                        android:id="@+id/Page_137_Name"/>
+                        android:textSize="16sp" />
 
 
                     <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+                        android:id="@+id/Page_137_Family"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="18dp"
-                        android:layout_marginLeft="18dp"
                         android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginTop="8dp"
                         android:background="@drawable/back_message_137"
                         android:hint="*نام خانوادگی"
                         android:padding="8dp"
-                        android:textSize="16sp"
-                        android:id="@+id/Page_137_Family"/>
+                        android:textSize="16sp" />
+
+
+                    <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+                        android:id="@+id/Page_137_NationalCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginTop="8dp"
+                        android:maxEms="10"
+                        android:background="@drawable/back_message_137"
+                        android:hint="*کد ملی"
+                        android:inputType="number"
+                        android:padding="8dp"
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -220,32 +236,20 @@
                         android:textSize="16sp" />
 
 
-                    <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="18dp"
-                        android:layout_marginLeft="18dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="@drawable/back_message_137"
-                        android:hint="ثابت"
-                        android:padding="8dp"
-                        android:textSize="16sp"
-                        android:id="@+id/Page_137_Telephone"/>
-
 
                     <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+                        android:id="@+id/Page_137_Phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginRight="18dp"
-                        android:layout_marginLeft="18dp"
                         android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginRight="18dp"
+                        android:layout_marginTop="8dp"
                         android:background="@drawable/back_message_137"
                         android:hint="*همراه"
+                        android:inputType="number"
                         android:padding="8dp"
-                        android:textSize="16sp"
-                        android:id="@+id/Page_137_Phone"/>
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 
@@ -254,124 +258,144 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 app:cardElevation="1dp">
 
                 <www.municipality.ir.takestanmunicipality.Views.CustomTextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="45dp"
                     android:padding="8dp"
-                    android:text="شماره تماس"
+                    android:text="فایل ضمیمه"
                     android:textColor="#000"
                     android:textSize="16sp" />
 
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:orientation="horizontal"
-                    android:weightSum="3"
-                    android:paddingBottom="10dp"
-                    android:layout_marginTop="55dp">
+                    android:layout_height="160dp">
 
 
                     <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:id="@+id/Page_137_View"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="45dp"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:src="@drawable/microphone"/>
 
-                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
-                            android:layout_width="match_parent"
+                        <LinearLayout
+                            android:id="@+id/Page_137_Voice_Btn"
+                            android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:text="صدا"
-                            android:textSize="12sp"
-                            android:gravity="center"
-                            android:textColor="#000"
-                            android:layout_marginTop="8dp"/>
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:src="@drawable/microphone" />
+
+                            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center"
+                                android:text="صدا"
+                                android:textColor="#000"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:id="@+id/Page_137_Video_Btn">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:src="@drawable/photo_camera" />
+
+                            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center"
+                                android:text="فیلم"
+                                android:textColor="#000"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/Page_137_Image_Btn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:src="@drawable/clapperboard" />
+
+                            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8dp"
+                                android:gravity="center"
+                                android:text="تصویر"
+                                android:textColor="#000"
+                                android:textSize="12sp" />
+
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:src="@drawable/photo_camera"/>
-
-                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="فیلم"
-                            android:textSize="12sp"
-                            android:gravity="center"
-                            android:textColor="#000"
-                            android:layout_marginTop="8dp"/>
+                    <TextView
+                        android:id="@+id/Page_137_Result"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:textSize="12sp"
+                        android:layout_below="@+id/Page_137_View"
+                        android:textColor="#000" />
 
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:id="@+id/Page_137_Image_Btn"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="60dp"
-                            android:src="@drawable/clapperboard"/>
-
-                        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:text="تصویر"
-                            android:textSize="12sp"
-                            android:gravity="center"
-                            android:textColor="#000"
-                            android:layout_marginTop="8dp"/>
-
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
+                </RelativeLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:cardElevation="2dp"
-                android:layout_margin="16dp"
                 android:layout_gravity="center"
-                app:cardCornerRadius="24dp">
+                android:layout_margin="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp">
 
                 <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                    android:id="@+id/Page_137_Btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:background="@color/colorPrimaryDark"
                     android:gravity="center"
-                    android:text="ارسال پیام"
-                    android:textColor="#FFF"
                     android:paddingBottom="12dp"
-                    android:paddingTop="12dp"
                     android:paddingEnd="50dp"
                     android:paddingStart="50dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:id="@+id/Page_137_Btn"/>
+                    android:paddingTop="12dp"
+                    android:text="ارسال پیام"
+                    android:textColor="#FFF" />
 
             </android.support.v7.widget.CardView>
 

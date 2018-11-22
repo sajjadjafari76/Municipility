@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Page_137.Main_137">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Main137_Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        app:contentInsetStart="0dp"
+        android:elevation="4dp"
+        android:background="@drawable/back_toolbar_color">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:id="@+id/Main137_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="سامانه ارتباط مردمی 137"
+                android:textColor="#FFF"
+                android:layout_centerInParent="true"/>
+
+            <ImageView
+                android:id="@+id/Main137_Backwards"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_left_arrow"
+                android:paddingRight="14dp"
+                android:paddingLeft="14dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_marginLeft="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_alignParentLeft="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"/>
+
+
+           <!-- <ImageView
+                android:id="@+id/Main137_Consistency"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_add_black"
+                android:paddingRight="14dp"
+                android:paddingLeft="12dp"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:layout_marginLeft="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_alignParentRight="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"/>
+-->
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+   <!-- <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_below="@+id/Main137_Toolbar"
+        android:id="@+id/Main137_TabLayout"
+        android:background="#F9F8FD"/>-->
+
+    <!--<LinearLayout
+        android:id="@+id/Main137_View"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="پیگیری"
+            android:visibility="gone"
+            android:textSize="20sp"
+            android:id="@+id/consistency"
+            android:padding="10dp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="ثبت درخواست"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:textSize="20sp"
+            android:id="@+id/request"
+            />
+
+    </LinearLayout>
+-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@+id/Main137_TabLayout"-->
+        <!--android:layout_marginTop="6dp"-->
+        <!--android:id="@+id/Main137_Recycler"/>-->
+
+
+<!--
+    <android.support.v4.view.ViewPager
+        android:id="@+id/UserProfile_ViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Main137_TabLayout"
+        android:layout_alignParentBottom="true"/>-->
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/Main137_Toolbar"
+        android:src="@drawable/logo"
+        android:id="@+id/Main137_Image"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/Main137_Image"
+        android:id="@+id/Main137_View"
+        android:padding="10dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:text="درخواست های من"
+            android:drawableRight="@drawable/ic_history_back"
+            android:id="@+id/Main137_MyRequest"
+            android:drawablePadding="-20dp"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1"
+            android:text="ثبت درخواست"
+            android:drawableRight="@drawable/ic_add_black"
+            android:id="@+id/Main137_Register"
+            android:drawablePadding="-20dp"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="پیگیری درخواست"
+        android:id="@+id/Main137_Track"
+        android:drawableRight="@drawable/ic_search"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_below="@+id/Main137_View" />
+
+
+</RelativeLayout>

@@ -1,24 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="www.municipality.ir.takestanmunicipality">
 
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />  deprecated for pushe-->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- <uses-permission android:name="com.samsung.permission.SSENSOR"/> -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="com.samsung.permission.SSENSOR_HRM_RAW_PPG" />
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE" />  deprecated for pushe-->
+
+    <!--for map.ir-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!--  pushe  -->
+    <uses-sdk
+        tools:overrideLibrary="co.ronash.pushe" />
+    <permission
+        android:name="www.municipality.ir.takestanmunicipality.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission
+        android:name="www.municipality.ir.takestanmunicipality.permission.C2D_MESSAGE" />
+    <uses-permission
+        android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Optional permissions -->
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+
     <application
         android:name=".AppController.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_2"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:largeHeap="true">
+
+
         <activity android:name=".MainActivity" />
         <activity android:name=".ElectronicServices" />
         <activity
-            android:name=".Page_137"
+            android:name=".Page_137.Page_137"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".WebView_Electronic" />
         <activity android:name=".IntroduceCity.Introduce_City" />
@@ -27,17 +59,88 @@
         <activity android:name=".IntroductionMunicipality.Introduction_Municipality" />
         <activity android:name=".Religious_Prayers" />
         <activity android:name=".MainPage">
+            <!--<meta-data-->
+                <!--android:name="cheshmakPush"-->
+                <!--android:value="openActivityOnPush" />-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
         </activity>
+
         <activity
             android:name=".Suggest_Criticism"
-            android:windowSoftInputMode="stateHidden" />
+            android:windowSoftInputMode="stateHidden">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
         <activity android:name=".Exit_Page" />
-        <activity android:name=".Recreation.Recreation"></activity>
+        <activity android:name=".Recreation.Recreation" />
+        <activity android:name=".Voice.Record_Voice" />
+        <activity android:name=".Page_137.Main_137" />
+        <activity android:name=".Page_137.Consistency_137" />
+        <activity android:name=".News">
+
+        </activity>
+        <activity android:name=".Page_137.Request.Request137" >
+
+        </activity>
+        <activity android:name=".MapOnline">
+
+
+
+
+        </activity>
+
+        <!--<meta-data-->
+            <!--android:name="com.google.android.maps.v2.API_KEY"-->
+            <!--android:value="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRjYWE3ODA5ZDBiMmYyNzBmMjMxMDE0M2E0MGZkMjgxNDI0MTQxZDQ2MDczMmVjYWNlOTY2MmY3MDQzMTgzZDY0N2EyZWY3YTRhODcxYmIxIn0.eyJhdWQiOiJteWF3ZXNvbWVhcHAiLCJqdGkiOiJkY2FhNzgwOWQwYjJmMjcwZjIzMTAxNDNhNDBmZDI4MTQyNDE0MWQ0NjA3MzJlY2FjZTk2NjJmNzA0MzE4M2Q2NDdhMmVmN2E0YTg3MWJiMSIsImlhdCI6MTU0MDYyMTQ5OCwibmJmIjoxNTQwNjIxNDk4LCJleHAiOjE1NDA2MjUwOTgsInN1YiI6IiIsInNjb3BlcyI6WyJiYXNpYyIsImVtYWlsIl19.b_JU4LoB_yvkk4G0A8zMXowQyKLYVrGIUZEMeTq2HoWGaV0WjQumhtKix1zzYlLrLHg54w3hmisf-fKLY3tptJTaIHRaQANkI_tLh_znQb3Q9p55evywUa0CXTKgX76iNk7tT4TxUiORExPNMr2L288WRuMWa5d3tKDgc4SXuSvrxCItbGlElNYnysK5P62CSApeHN4ap117NTFjIO0LYhFyLn2qMcT4FRH3wo_BFwZghcHThe7RDZIaHvdK4AACKChGSIGZh9-vbkZRr7KpkdvsQOS9FzlskFgAz0NCqqAmz6zJ0bXq37y2D9IrzK5PJWeb1hSUowC2cKDINFRMlA" />-->
+
+        <!--google map-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCzAw8ST-YguIH4G2RrTJ_mGN4SlYgWk6g"/>
+
+
+
+
+        <!-- pushe  -->
+        <!--<receiver android:name="co.ronash.pushe.receiver.UpdateReceiver" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.PACKAGE_REPLACED" />-->
+
+                <!--<data-->
+                    <!--android:path="www.municipality.ir.takestanmunicipality"-->
+                    <!--android:scheme="package" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<receiver-->
+            <!--android:name="com.google.android.gms.gcm.GcmReceiver"-->
+            <!--android:exported="true"-->
+            <!--android:permission="com.google.android.c2dm.permission.SEND" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.google.android.c2dm.intent.RECEIVE" />-->
+
+                <!--<action android:name="com.google.android.c2dm.intent.REGISTRATION" />-->
+
+                <!--<category android:name="www.municipality.ir.takestanmunicipality" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--&lt;!&ndash; pushe &ndash;&gt;-->
+        <!--<meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_42426540184"/>-->
+        <!--<meta-data android:name="co.ronash.pushe.cr" android:value="Tm9uZQ=="/>-->
+
+
     </application>
 
 </manifest>

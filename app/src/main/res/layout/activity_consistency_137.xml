@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Page_137.Consistency_137">
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/Consistency137_Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@drawable/back_toolbar_color"
+        android:elevation="4dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+                android:id="@+id/IntroduceCity_Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="پیگیری درخواست"
+                android:textColor="#FFF" />
+
+            <ImageView
+                android:id="@+id/Consistency137_Backwards"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="1dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                android:paddingBottom="5dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/ic_left_arrow" />
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/Consistency137_View"
+        android:layout_below="@+id/Consistency137_Toolbar"
+        android:padding="15dp">
+
+        <www.municipality.ir.takestanmunicipality.Views.CustomEdittext
+            android:layout_width="match_parent"
+            android:layout_weight="1.8"
+            android:layout_height="wrap_content"
+            android:hint="شماره پیگیری خود را وارد کنید."
+            android:inputType="number"
+            android:textSize="14sp"
+            android:id="@+id/Consistency137_Code"
+            android:textColor="#000"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Consistency137_Search"
+            android:textColor="#FFF"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/back_toolbar_color"
+            android:text="جستجو"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Consistency137_View"
+        android:layout_margin="15dp">
+
+        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/Consistency137_Date"
+            android:textSize="15sp"
+            android:layout_marginTop="12dp"
+            android:layout_alignParentRight="true"/>
+
+        <www.municipality.ir.takestanmunicipality.Views.CustomTextView
+            android:layout_width="match_parent"
+            android:textColor="#000"
+            android:textSize="@dimen/Standard_Size_Text"
+            android:layout_below="@+id/Consistency137_Date"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:id="@+id/Consistency137_Result"/>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

@@ -30,7 +30,9 @@ public class IntroduceCity_Maps extends Fragment {
         View view = inflater.inflate(R.layout.fragment_introduce_city__maps, container, false);
 
         PhotoView photoView = (PhotoView)view.findViewById(R.id.IntroduceCityMaps_Image);
-        photoView.setImageResource(R.drawable.map_image);
+//        photoView.setImageResource(R.drawable.map_image);
+        photoView.setImageResource(R.drawable.takestan_map);
+        photoView.setZoomTransitionDuration(500);
         photoView.setScaleType(ImageView.ScaleType.FIT_XY);
 
         return view;

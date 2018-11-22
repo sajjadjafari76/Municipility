@@ -51,21 +51,17 @@ public class ElectronicServices extends AppCompatActivity implements View.OnClic
         for (int i = 0; i < 6 ; i++) {
             if (i==0) {
                 String text = new String();
-                text = "فرم خدمات شهری (137)";
-                data.add(text);
-            } else if (i==1) {
-                String text = new String();
                 text = "فرم ارزیابی خدمات شهری";
                 data.add(text);
-            }else if (i==2) {
+            }else if (i==1) {
                 String text = new String();
                 text = "فرم تکریم ارباب رجوع";
                 data.add(text);
-            }else if (i==3) {
+            }else if (i==2) {
                 String text = new String();
                 text = "فرم ملاقات مردمی با شهردار";
                 data.add(text);
-            }else if (i==4) {
+            }else if (i==3) {
                 String text = new String();
                 text = "سامانه 137 شهرداری";
                 data.add(text);

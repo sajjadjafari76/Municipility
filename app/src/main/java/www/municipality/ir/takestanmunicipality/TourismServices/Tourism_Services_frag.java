@@ -75,7 +75,7 @@ public class Tourism_Services_frag extends Fragment {
                 data.add(text);
             }else if (i == 3){
                 String text = new String();
-                text = "جشن انگور قاقازان";
+                text = "برگزاری جشن ملی انگور در تاکستان";
                 data.add(text);
             }
         }
@@ -129,7 +129,7 @@ public class Tourism_Services_frag extends Fragment {
                             break;
                         case 3:
                             fragment = new TourismServicesGrapes();
-                            title.setText("جشن انگور قاقازان");
+                            title.setText("برگزاری جشن ملی انگور در تاکستان");
                             tag = "history";
                             break;
                     }
