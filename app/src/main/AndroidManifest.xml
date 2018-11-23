@@ -59,86 +59,56 @@
         <activity android:name=".IntroductionMunicipality.Introduction_Municipality" />
         <activity android:name=".Religious_Prayers" />
         <activity android:name=".MainPage">
-            <!--<meta-data-->
-                <!--android:name="cheshmakPush"-->
-                <!--android:value="openActivityOnPush" />-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
 
-        <activity
-            android:name=".Suggest_Criticism"
-            android:windowSoftInputMode="stateHidden">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-        </activity>
+        <activity android:name=".Suggest_Criticism"
+            android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".Exit_Page" />
         <activity android:name=".Recreation.Recreation" />
         <activity android:name=".Voice.Record_Voice" />
         <activity android:name=".Page_137.Main_137" />
         <activity android:name=".Page_137.Consistency_137" />
-        <activity android:name=".News">
-
-        </activity>
-        <activity android:name=".Page_137.Request.Request137" >
-
-        </activity>
-        <activity android:name=".MapOnline">
-
-
-
-
-        </activity>
-
-        <!--<meta-data-->
-            <!--android:name="com.google.android.maps.v2.API_KEY"-->
-            <!--android:value="eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImRjYWE3ODA5ZDBiMmYyNzBmMjMxMDE0M2E0MGZkMjgxNDI0MTQxZDQ2MDczMmVjYWNlOTY2MmY3MDQzMTgzZDY0N2EyZWY3YTRhODcxYmIxIn0.eyJhdWQiOiJteWF3ZXNvbWVhcHAiLCJqdGkiOiJkY2FhNzgwOWQwYjJmMjcwZjIzMTAxNDNhNDBmZDI4MTQyNDE0MWQ0NjA3MzJlY2FjZTk2NjJmNzA0MzE4M2Q2NDdhMmVmN2E0YTg3MWJiMSIsImlhdCI6MTU0MDYyMTQ5OCwibmJmIjoxNTQwNjIxNDk4LCJleHAiOjE1NDA2MjUwOTgsInN1YiI6IiIsInNjb3BlcyI6WyJiYXNpYyIsImVtYWlsIl19.b_JU4LoB_yvkk4G0A8zMXowQyKLYVrGIUZEMeTq2HoWGaV0WjQumhtKix1zzYlLrLHg54w3hmisf-fKLY3tptJTaIHRaQANkI_tLh_znQb3Q9p55evywUa0CXTKgX76iNk7tT4TxUiORExPNMr2L288WRuMWa5d3tKDgc4SXuSvrxCItbGlElNYnysK5P62CSApeHN4ap117NTFjIO0LYhFyLn2qMcT4FRH3wo_BFwZghcHThe7RDZIaHvdK4AACKChGSIGZh9-vbkZRr7KpkdvsQOS9FzlskFgAz0NCqqAmz6zJ0bXq37y2D9IrzK5PJWeb1hSUowC2cKDINFRMlA" />-->
+        <activity android:name=".News"/>
+        <activity android:name=".Page_137.Request.Request137" />
+        <activity android:name=".MapOnline"/>
 
         <!--google map-->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCzAw8ST-YguIH4G2RrTJ_mGN4SlYgWk6g"/>
 
+         <!--pushe-->
+        <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
 
+                <data
+                    android:path="www.municipality.ir.takestanmunicipality"
+                    android:scheme="package" />
+            </intent-filter>
+        </receiver>
 
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
 
-        <!-- pushe  -->
-        <!--<receiver android:name="co.ronash.pushe.receiver.UpdateReceiver" >-->
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.PACKAGE_REPLACED" />-->
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-                <!--<data-->
-                    <!--android:path="www.municipality.ir.takestanmunicipality"-->
-                    <!--android:scheme="package" />-->
-            <!--</intent-filter>-->
-        <!--</receiver>-->
+                <category android:name="www.municipality.ir.takestanmunicipality" />
+            </intent-filter>
+        </receiver>
 
-        <!--<receiver-->
-            <!--android:name="com.google.android.gms.gcm.GcmReceiver"-->
-            <!--android:exported="true"-->
-            <!--android:permission="com.google.android.c2dm.permission.SEND" >-->
-            <!--<intent-filter>-->
-                <!--<action android:name="com.google.android.c2dm.intent.RECEIVE" />-->
-
-                <!--<action android:name="com.google.android.c2dm.intent.REGISTRATION" />-->
-
-                <!--<category android:name="www.municipality.ir.takestanmunicipality" />-->
-            <!--</intent-filter>-->
-        <!--</receiver>-->
-
-        <!--&lt;!&ndash; pushe &ndash;&gt;-->
-        <!--<meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_42426540184"/>-->
-        <!--<meta-data android:name="co.ronash.pushe.cr" android:value="Tm9uZQ=="/>-->
+        <!-- pushe -->
+        <meta-data android:name="co.ronash.pushe.token" android:value="PUSHE_42426540184"/>
+        <meta-data android:name="co.ronash.pushe.cr" android:value="Tm9uZQ=="/>
 
 
     </application>

@@ -45,84 +45,22 @@
                 android:foreground="?android:attr/selectableItemBackgroundBorderless"/>
 
 
-           <!-- <ImageView
-                android:id="@+id/Main137_Consistency"
-                android:layout_width="wrap_content"
+            <ImageView
+                android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_add_black"
-                android:paddingRight="14dp"
-                android:paddingLeft="12dp"
-                android:paddingTop="3dp"
-                android:paddingBottom="3dp"
-                android:layout_marginLeft="1dp"
-                android:clickable="true"
-                android:focusable="true"
+                android:src="@drawable/logo_w"
                 android:layout_alignParentRight="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"/>
--->
+                android:paddingRight="7dp"
+                android:paddingLeft="7dp"
+                android:paddingTop="6dp"
+                android:layout_marginLeft="1dp"/>
+
 
         </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>
 
-
-   <!-- <android.support.design.widget.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:layout_below="@+id/Main137_Toolbar"
-        android:id="@+id/Main137_TabLayout"
-        android:background="#F9F8FD"/>-->
-
-    <!--<LinearLayout
-        android:id="@+id/Main137_View"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/logo"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="15dp">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="پیگیری"
-            android:visibility="gone"
-            android:textSize="20sp"
-            android:id="@+id/consistency"
-            android:padding="10dp"/>
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="ثبت درخواست"
-            android:padding="10dp"
-            android:visibility="gone"
-            android:textSize="20sp"
-            android:id="@+id/request"
-            />
-
-    </LinearLayout>
--->
-
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_below="@+id/Main137_TabLayout"-->
-        <!--android:layout_marginTop="6dp"-->
-        <!--android:id="@+id/Main137_Recycler"/>-->
-
-
-<!--
-    <android.support.v4.view.ViewPager
-        android:id="@+id/UserProfile_ViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/Main137_TabLayout"
-        android:layout_alignParentBottom="true"/>-->
 
     <ImageView
         android:layout_width="match_parent"
@@ -146,8 +84,7 @@
             android:layout_weight="1"
             android:text="درخواست های من"
             android:drawableRight="@drawable/ic_history_back"
-            android:id="@+id/Main137_MyRequest"
-            android:drawablePadding="-20dp"/>
+            android:id="@+id/Main137_MyRequest"/>
 
         <Button
             android:layout_width="0dp"
@@ -155,8 +92,7 @@
             android:layout_weight="1"
             android:text="ثبت درخواست"
             android:drawableRight="@drawable/ic_add_black"
-            android:id="@+id/Main137_Register"
-            android:drawablePadding="-20dp"/>
+            android:id="@+id/Main137_Register"/>
 
     </LinearLayout>
 

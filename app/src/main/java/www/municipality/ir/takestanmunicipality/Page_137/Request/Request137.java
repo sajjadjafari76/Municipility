@@ -15,7 +15,6 @@ import android.widget.Toast;
 import com.bignerdranch.expandablerecyclerview.Model.ParentObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import www.municipality.ir.takestanmunicipality.DataBase.MyTokenManager;
@@ -29,7 +28,7 @@ public class Request137 extends AppCompatActivity {
 
     private RecyclerView recycler;
     private CustomTextView Empty;
-    private ImageView Main137_Backwards;
+    private ImageView Request137_Backwards;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,38 +37,22 @@ public class Request137 extends AppCompatActivity {
 
         recycler = findViewById(R.id.Main137_Recycler);
          Empty = findViewById(R.id.Request137_Empty);
-        Main137_Backwards = findViewById(R.id.Main137_Backwards);
+        Request137_Backwards = findViewById(R.id.Request137_Backwards);
+
+
+        Request137_Backwards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("ggg", "7878787");
+                finish();
+            }
+        });
 
          if (MyTokenManager.getInstance(getApplicationContext()).getTrackingCode().size() == 0) {
              recycler.setVisibility(View.GONE);
              Empty.setVisibility(View.VISIBLE);
              return;
          }
-
-//         recycler.setLayoutManager(
-//                new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
-//         recycler.setAdapter(
-//                 new MyCustomAdapter(MyTokenManager.getInstance(getApplicationContext()).getTrackingCode()));
-
-
-//        List<ParentModel> parentModels = new ArrayList<>();
-//        for (int i = 0; i < 5 ; i++) {
-//            ParentModel model = new ParentModel();
-//            model.setContent("علی اصغر");
-//            model.setTrackingCode("1234567899966");
-//
-//            parentModels.add(model);
-//
-//        }
-
-
-
-
-
-//        RequestAdapter mCrimeExpandableAdapter = new RequestAdapter(this, generateCrimes(), parentModels, childModels);
-////        mCrimeExpandableAdapter.setCustomParentAnimationViewId(R.id.parent_list_item_expand_arrow);
-//        mCrimeExpandableAdapter.setParentClickableViewAnimationDefaultDuration();
-//        mCrimeExpandableAdapter.setParentAndIconExpandOnClick(true);
 
         List<ParentModel> models = new ArrayList<>();
 
@@ -83,18 +66,8 @@ public class Request137 extends AppCompatActivity {
 
 
         MyRequestAdapter adapter = new MyRequestAdapter(models,this);
-
         recycler.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
-
         recycler.setAdapter(adapter);
-
-
-        Main137_Backwards.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
 
 
     }
@@ -166,19 +139,6 @@ public class Request137 extends AppCompatActivity {
 
 
     private ArrayList<ParentObject> generateCrimes() {
-//        CrimeLab crimeLab = CrimeLab.get(getApplicationContext());
-//        List<Crime> crimes = crimeLab.getCrimes();
-//
-//        ArrayList<ParentObject> parentObjects = new ArrayList<>();
-//        for (Crime crime : crimes) {
-//            ArrayList<Object> childList = new ArrayList<>();
-//            childList.add(new CrimeChild(crime.getDate(), crime.isSolved()));
-//            crime.setChildObjectList(childList);
-//            parentObjects.add(crime);
-//        }
-//
-
-
 
         ArrayList<ParentObject> parentObjects = new ArrayList<>();
         for (int i = 0; i < 10; i++) {

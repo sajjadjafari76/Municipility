@@ -2,11 +2,14 @@ package www.municipality.ir.takestanmunicipality;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -139,7 +142,31 @@ public class News extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
-            Picasso.with(mContext).load(mDataSet.get(position).Image).error(R.drawable.no_image).into(holder.Image);
+
+//            Display display = getWindowManager().getDefaultDisplay();
+//            Point size = new Point();
+//            display.getSize(size);
+//            int width = size.x;
+//            int height = size.y;
+
+//            DisplayMetrics displaymetrics = new DisplayMetrics();
+//            getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
+//
+//            int screenHeight = displaymetrics.heightPixels;
+//            int screenWidth = displaymetrics.widthPixels;
+//
+//            Log.e("screen", displaymetrics.heightPixels + " | " + displaymetrics.widthPixels);
+//
+//            double imgHeight = screenHeight;
+//            double imgWidth =  screenWidth;
+
+            Picasso.with(mContext)
+                    .load(mDataSet.get(position).Image)
+                    .error(R.drawable.no_image)
+                    .resize( 400,400)
+                    .onlyScaleDown()
+                    .into(holder.Image);
+
             holder.Topic.setText(mDataSet.get(position).Topic);
             holder.Content.setText(mDataSet.get(position).getContent());
             holder.Date.setText(mDataSet.get(position).getDate());

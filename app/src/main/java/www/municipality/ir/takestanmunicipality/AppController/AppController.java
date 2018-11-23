@@ -10,8 +10,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 
-import ir.map.sdk_map.MapSDK;
-//import me.cheshmak.android.sdk.core.Cheshmak;
 import www.municipality.ir.takestanmunicipality.Network.LruBitmapCache;
 
 public class AppController extends Application {
@@ -27,7 +25,6 @@ public class AppController extends Application {
     public void onCreate() {
         super.onCreate();
 
-        MapSDK.init(this);
         mInstance = this;
 //        Cheshmak.with(this);
 //        Cheshmak.initTracker("NV9VFaYDA+LrtDm8zhJSjg==");

@@ -45,6 +45,20 @@
                 android:src="@drawable/ic_left_arrow" />
 
 
+
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/logo_w"
+                android:layout_alignParentRight="true"
+                android:paddingRight="7dp"
+                android:paddingLeft="7dp"
+                android:paddingTop="6dp"
+                android:layout_marginLeft="1dp"/>
+
+
+
         </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>

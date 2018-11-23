@@ -19,18 +19,13 @@ import android.widget.Toast;
 
 import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QuerySnapshot;
+
 import com.q42.android.scrollingimageview.ScrollingImageView;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import co.ronash.pushe.Pushe;
 
 //import co.ronash.pushe.Pushe;
 
@@ -50,54 +45,8 @@ public class MainPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-//
-//        FirebaseFirestore db = FirebaseFirestore.getInstance();
-//
-//
-//        // Create a new user with a first and last name
-//        Map<String, Object> user = new HashMap<>();
-//        user.put("first", "Ada");
-//        user.put("last", "Lovelace");
-//        user.put("born", 1815);
-//
-//// Add a new document with a generated ID
-//        db.collection("users")
-//                .add(user)
-//                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-//
-//
-//                    @Override
-//                    public void onSuccess(DocumentReference documentReference) {
-//                        Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Log.w(TAG, "Error adding document", e);
-//                    }
-//                });
-//
-//
-//        db.collection("users")
-//                .get()
-//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                        if (task.isSuccessful()) {
-//                            for (DocumentSnapshot document : task.getResult()) {
-//                                Log.d(TAG, document.getId() + " => " + document.getData());
-//                            }
-//                        } else {
-//                            Log.w(TAG, "Error getting documents.", task.getException());
-//                        }
-//                    }
-//                });
-//
-
-
         // pushe
-//        Pushe.initialize(this,true);
+        Pushe.initialize(this,true);
 
         FloatingActionButton button = findViewById(R.id.MainPage_Btn);
         final FloatingActionButton sound = findViewById(R.id.MainPage_Sound);
@@ -109,15 +58,23 @@ public class MainPage extends AppCompatActivity {
             }
         });
 
+        if (Tools.getInstance(getApplicationContext()).read("Music","").equals("1")) {
+            mediaPlayer.pause();
+            sound.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_speaker));
+            state = false;
+        }
+
         sound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (state) {
+                    Tools.getInstance(getApplicationContext()).write("Music","1");
                     mediaPlayer.pause();
                     sound.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_speaker));
                     state = false;
                     Log.e("status", "true");
                 }else {
+                    Tools.getInstance(getApplicationContext()).write("Music","0");
                     mediaPlayer.start();
                     sound.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_speaker1));
                     state = true;
