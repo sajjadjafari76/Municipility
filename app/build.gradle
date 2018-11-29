@@ -65,7 +65,7 @@ dependencies {
     implementation 'co.ronash.android:pushe-base:1.4.1'
     implementation 'com.google.android.gms:play-services-gcm:16.0.0'
     implementation 'com.google.android.gms:play-services-location:16.0.0'
-    implementation 'com.google.android.gms:play-services-ads:16.0.0'
+//    implementation 'com.google.android.gms:play-services-ads:16.0.0'
 
     // expansion
     implementation 'com.github.florent37:expansionpanel:1.0.3'
@@ -77,7 +77,7 @@ dependencies {
 //    implementation 'com.google.firebase:firebase-core:16.0.5'
 
     //JWT
-    implementation 'com.auth0:java-jwt:3.4.1'
+//    implementation 'com.auth0:java-jwt:3.4.1'
 }
 
 apply plugin: 'com.google.gms.google-services'

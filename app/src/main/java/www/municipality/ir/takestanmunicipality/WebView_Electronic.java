@@ -4,12 +4,8 @@ import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
 public class WebView_Electronic extends AppCompatActivity {
 
@@ -44,7 +40,7 @@ public class WebView_Electronic extends AppCompatActivity {
                     webView.loadUrl("http://www.takestancity.ir/HomePage.aspx?TabID=4660&Site=DouranPortal&Lang=fa-IR");
                     break;
                 case "5":
-                    webView.loadUrl("http://stit.ir/samaneh/");
+                    webView.loadUrl("http://137.takestancity.ir/");
                     break;
             }
         }

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Handler;
-import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -22,8 +21,6 @@ import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
 
 import com.q42.android.scrollingimageview.ScrollingImageView;
 
-import java.util.HashMap;
-import java.util.Map;
 
 import co.ronash.pushe.Pushe;
 
@@ -58,11 +55,11 @@ public class MainPage extends AppCompatActivity {
             }
         });
 
-        if (Tools.getInstance(getApplicationContext()).read("Music","").equals("1")) {
-            mediaPlayer.pause();
-            sound.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_speaker));
-            state = false;
-        }
+//        if (Tools.getInstance(getApplicationContext()).read("Music","").equals("1")) {
+//            mediaPlayer.pause();
+//            sound.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_speaker));
+//            state = false;
+//        }
 
         sound.setOnClickListener(new View.OnClickListener() {
             @Override

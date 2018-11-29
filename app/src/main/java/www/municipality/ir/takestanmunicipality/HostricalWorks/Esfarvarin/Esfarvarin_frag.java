@@ -17,16 +17,6 @@ import android.widget.RelativeLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import www.municipality.ir.takestanmunicipality.HostricalWorks.HistoricalWorks_BankMarkazi;
-import www.municipality.ir.takestanmunicipality.HostricalWorks.HistoricalWorks_BoghePir;
-import www.municipality.ir.takestanmunicipality.HostricalWorks.HistoricalWorks_Ghaledokhtar;
-import www.municipality.ir.takestanmunicipality.HostricalWorks.HistoricalWorks_KhoramAbad;
-import www.municipality.ir.takestanmunicipality.HostricalWorks.HistoricalWorks_khaleKoh;
-import www.municipality.ir.takestanmunicipality.HostricalWorks.Historical_Works_frag;
-import www.municipality.ir.takestanmunicipality.HostricalWorks.Khoramdasht.Khoramdasht_frag;
-import www.municipality.ir.takestanmunicipality.HostricalWorks.Markazi.Markazi_frag;
-import www.municipality.ir.takestanmunicipality.HostricalWorks.ZiaAbad.ZiaAbad_frag;
-import www.municipality.ir.takestanmunicipality.IntroduceCity.IntroduceCity_Maps;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 

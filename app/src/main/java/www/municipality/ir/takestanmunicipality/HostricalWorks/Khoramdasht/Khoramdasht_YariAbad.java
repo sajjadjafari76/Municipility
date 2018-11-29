@@ -19,9 +19,6 @@ import me.relex.circleindicator.CircleIndicator;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.TourismServices.SliderAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Khoramdasht_YariAbad extends Fragment {
 
 

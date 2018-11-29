@@ -17,8 +17,6 @@ import android.widget.RelativeLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-import www.municipality.ir.takestanmunicipality.HostricalWorks.Esfarvarin.Esfarvarin_frag;
-import www.municipality.ir.takestanmunicipality.HostricalWorks.ZiaAbad.ZiaAbad_frag;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 

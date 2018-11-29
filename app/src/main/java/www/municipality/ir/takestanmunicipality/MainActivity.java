@@ -34,7 +34,6 @@ import www.municipality.ir.takestanmunicipality.HostricalWorks.Historical_Works;
 import www.municipality.ir.takestanmunicipality.IntroduceCity.Introduce_City;
 import www.municipality.ir.takestanmunicipality.IntroductionMunicipality.Introduction_Municipality;
 import www.municipality.ir.takestanmunicipality.Page_137.Main_137;
-import www.municipality.ir.takestanmunicipality.Page_137.Page_137;
 import www.municipality.ir.takestanmunicipality.Recreation.Recreation;
 import www.municipality.ir.takestanmunicipality.TourismServices.Tourism_Services;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;

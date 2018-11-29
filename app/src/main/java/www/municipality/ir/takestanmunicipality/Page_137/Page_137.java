@@ -2,7 +2,6 @@ package www.municipality.ir.takestanmunicipality.Page_137;
 
 import android.Manifest;
 import android.app.ProgressDialog;
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,7 +19,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -36,11 +34,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.androidnetworking.AndroidNetworking;
-import com.androidnetworking.common.Priority;
-import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.StringRequestListener;
-import com.androidnetworking.interfaces.UploadProgressListener;
-import com.google.gson.JsonArray;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpPost;
 import com.koushikdutta.async.http.AsyncHttpResponse;
@@ -58,20 +51,15 @@ import java.util.List;
 import java.util.Map;
 
 import www.municipality.ir.takestanmunicipality.AppController.AppController;
-import www.municipality.ir.takestanmunicipality.DataBase.MyDataBase;
 import www.municipality.ir.takestanmunicipality.DataBase.MyTokenManager;
 import www.municipality.ir.takestanmunicipality.DataModel.TrackingCodeModel;
 import www.municipality.ir.takestanmunicipality.Globals;
 import www.municipality.ir.takestanmunicipality.R;
-import www.municipality.ir.takestanmunicipality.Religious_Prayers;
 import www.municipality.ir.takestanmunicipality.Tools;
 import www.municipality.ir.takestanmunicipality.Views.CFProvider;
 import www.municipality.ir.takestanmunicipality.Views.CustomEdittext;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 import www.municipality.ir.takestanmunicipality.Voice.Record_Voice;
-import www.municipality.ir.takestanmunicipality.VolleyMultipartRequest;
-
-import static www.municipality.ir.takestanmunicipality.Globals.ApiURLAllNews;
 
 
 public class Page_137 extends AppCompatActivity implements View.OnClickListener {

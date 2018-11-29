@@ -4,31 +4,17 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
-import com.androidnetworking.AndroidNetworking;
-import com.androidnetworking.common.Priority;
-import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.StringRequestListener;
 import com.koushikdutta.async.http.AsyncHttpClient;
 import com.koushikdutta.async.http.AsyncHttpPost;
 import com.koushikdutta.async.http.AsyncHttpResponse;
@@ -37,16 +23,8 @@ import com.koushikdutta.async.http.body.MultipartFormDataBody;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.util.regex.Pattern;
-
-import www.municipality.ir.takestanmunicipality.AppController.AppController;
-import www.municipality.ir.takestanmunicipality.DataBase.MyTokenManager;
-import www.municipality.ir.takestanmunicipality.DataModel.TrackingCodeModel;
-import www.municipality.ir.takestanmunicipality.Page_137.Page_137;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 
-import static www.municipality.ir.takestanmunicipality.Globals.ApiURL;
 
 public class Suggest_Criticism extends AppCompatActivity implements View.OnClickListener {
 
