@@ -8,11 +8,9 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -23,7 +21,6 @@ import com.android.volley.toolbox.StringRequest;
 import com.github.florent37.expansionpanel.ExpansionHeader;
 import com.github.florent37.expansionpanel.ExpansionLayout;
 import com.github.florent37.expansionpanel.viewgroup.ExpansionLayoutCollection;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 
@@ -31,9 +28,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import www.municipality.ir.takestanmunicipality.AppController.AppController;
+import www.municipality.ir.takestanmunicipality.appController.AppController;
 import www.municipality.ir.takestanmunicipality.DataModel.ParentModel;
-import www.municipality.ir.takestanmunicipality.Page_137.Consistency_137;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 

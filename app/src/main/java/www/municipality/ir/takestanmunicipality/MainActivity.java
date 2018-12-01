@@ -97,8 +97,9 @@ public class MainActivity extends AppCompatActivity {
         pager = container.getViewPager();
         pager.setAdapter(new MyPagerAdapter());
         pager.setClipChildren(false);
-        pager.setOffscreenPageLimit(7);
+        pager.setOffscreenPageLimit(10);
         indicator.setViewPager(pager);
+
 
 
         new CoverFlow.Builder()
@@ -106,10 +107,18 @@ public class MainActivity extends AppCompatActivity {
                 .scale(0.3f)
                 .pagerMargin(10)
                 .spaceSize(-10f)
-                .rotationY(5f)
+                .rotationY(15f)
                 .build();
 
 
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//
+//
+//
+//            }
+//        });
         pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -122,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
                 in.setDuration(300);
 
                 switch (position) {
-
                     case 0:
                         name.setText("سامانه ارتباط مردمی 137");
                         name.startAnimation(in);
@@ -171,6 +179,8 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, "onPageScrollStateChanged", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         timer = new CountDownTimer(4000, 1000) {
 

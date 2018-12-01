@@ -38,7 +38,7 @@
 
 
     <application
-        android:name=".AppController.AppController"
+        android:name=".appController.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_2"
         android:supportsRtl="true"
@@ -64,7 +64,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Suggest_Criticism"
             android:windowSoftInputMode="stateHidden"/>
         <activity android:name=".Exit_Page" />

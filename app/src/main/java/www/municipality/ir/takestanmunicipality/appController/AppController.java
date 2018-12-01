@@ -1,4 +1,4 @@
-package www.municipality.ir.takestanmunicipality.AppController;
+package www.municipality.ir.takestanmunicipality.appController;
 
 
 import android.app.Application;

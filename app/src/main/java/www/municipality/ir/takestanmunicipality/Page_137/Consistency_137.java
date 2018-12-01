@@ -1,9 +1,7 @@
 package www.municipality.ir.takestanmunicipality.Page_137;
 
 import android.app.ProgressDialog;
-import android.content.pm.ResolveInfo;
 import android.os.Build;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -12,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -23,21 +20,16 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import www.municipality.ir.takestanmunicipality.AppController.AppController;
+import www.municipality.ir.takestanmunicipality.appController.AppController;
 import www.municipality.ir.takestanmunicipality.R;
-import www.municipality.ir.takestanmunicipality.Religious_Prayers;
 import www.municipality.ir.takestanmunicipality.Views.CFProvider;
 import www.municipality.ir.takestanmunicipality.Views.CustomEdittext;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 
-import static www.municipality.ir.takestanmunicipality.Globals.ApiURL;
-import static www.municipality.ir.takestanmunicipality.Globals.ApiURLAll;
 import static www.municipality.ir.takestanmunicipality.Globals.ApiURLAllNews;
 
 public class Consistency_137 extends AppCompatActivity {
