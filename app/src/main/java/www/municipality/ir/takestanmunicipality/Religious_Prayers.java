@@ -61,7 +61,7 @@ public class Religious_Prayers extends AppCompatActivity implements View.OnClick
                     morning.setText( array.getString("Imsaak").substring(0, 5));
                     rise.setText( array.getString("Sunrise").substring(0, 5) );
                     noon.setText(array.getString("Noon").substring(0, 5) );
-                    west.setText( array.getString("Sunset").substring(0, 5) );
+                    west.setText( array.getString("Maghreb").substring(0, 5) );
                     sunset.setText(array.getString("Sunset").substring(0, 5) );
 
                 } catch (JSONException e) {

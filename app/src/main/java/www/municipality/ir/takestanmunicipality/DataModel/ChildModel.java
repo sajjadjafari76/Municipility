@@ -13,9 +13,6 @@ public class ChildModel {
         this.Info = Info;
         this.Type = Type;
     }
-    public ChildModel() {
-
-    }
 
     public String getDate() {
         return Date;
@@ -27,10 +24,6 @@ public class ChildModel {
 
     public String getResponse() {
         return Response;
-    }
-
-    public void setResponse(String response) {
-        Response = response;
     }
 
     public String getInfo() {

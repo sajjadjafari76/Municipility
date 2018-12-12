@@ -4,6 +4,7 @@ package www.municipality.ir.takestanmunicipality.HostricalWorks.Markazi;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -19,11 +20,7 @@ import me.relex.circleindicator.CircleIndicator;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.TourismServices.SliderAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Markazi_Khondo extends Fragment {
-
 
     private ArrayList<Drawable> SliderArray = new ArrayList<Drawable>();
     private View view;
@@ -32,9 +29,8 @@ public class Markazi_Khondo extends Fragment {
     private  int currentPage = 0;
 
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
 
@@ -57,15 +53,12 @@ public class Markazi_Khondo extends Fragment {
 
     }
 
-
     public void ImageSlider() {
 
         if (SliderArray.size() != 0) {
             mPager.setAdapter(new SliderAdapter(getActivity(), SliderArray));
             indicator.setViewPager(mPager);
 
-
-            // Auto start of viewpager
             final Handler handler = new Handler();
             final Runnable Update = new Runnable() {
                 public void run() {
@@ -85,6 +78,5 @@ public class Markazi_Khondo extends Fragment {
         }
 
     }
-
 
 }

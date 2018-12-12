@@ -124,7 +124,7 @@ public class MainPage extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         if (mediaPlayer != null) {
-            mediaPlayer.stop();
+//            mediaPlayer.stop();
             mediaPlayer.release();
         }
     }

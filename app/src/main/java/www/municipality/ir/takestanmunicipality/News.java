@@ -27,8 +27,8 @@ import java.util.List;
 
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter;
 import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
-import www.municipality.ir.takestanmunicipality.appController.AppController;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
+import www.municipality.ir.takestanmunicipality.appController.AppController;
 
 import static www.municipality.ir.takestanmunicipality.Globals.ApiURLAllNews;
 

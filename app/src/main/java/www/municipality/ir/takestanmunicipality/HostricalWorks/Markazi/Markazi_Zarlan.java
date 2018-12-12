@@ -4,6 +4,7 @@ package www.municipality.ir.takestanmunicipality.HostricalWorks.Markazi;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -19,15 +20,11 @@ import me.relex.circleindicator.CircleIndicator;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.TourismServices.SliderAdapter;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Markazi_Zarlan extends Fragment {
 
 
 
-    private ArrayList<Drawable> SliderArray = new ArrayList<Drawable>();
-    private View view;
+    private ArrayList<Drawable> SliderArray = new ArrayList<>();
     private ViewPager mPager;
     private CircleIndicator indicator;
     private  int currentPage = 0;
@@ -35,11 +32,11 @@ public class Markazi_Zarlan extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
 
-        view = inflater.inflate(R.layout.fragment_markazi__zarlan, container, false);
+        View view = inflater.inflate(R.layout.fragment_markazi__zarlan, container, false);
         mPager = view.findViewById(R.id.MarkaziZarlan_Pager);
         indicator = view.findViewById(R.id.MarkaziZarlan_Indigator);
 //        textView = view.findViewById(R.id.TourismServices_Text);

@@ -3,12 +3,12 @@ package www.municipality.ir.takestanmunicipality.Views;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
-import android.widget.Button;
 
 import www.municipality.ir.takestanmunicipality.R;
 
-public class CustomButton extends Button {
+public class CustomButton extends AppCompatButton {
 
 
     public CustomButton(Context context) {
@@ -33,15 +33,14 @@ public class CustomButton extends Button {
         array.recycle();
     }
 
-    private boolean setCustomFont(Context ctx, String asset) {
-        Typeface typeface;
+    private void setCustomFont(Context ctx, String asset) {
+        Typeface typeface = null;
         try {
             typeface = Typeface.createFromAsset(ctx.getAssets(), asset);
         }catch (Exception c) {
-            return false;
+            c.printStackTrace();
         }
         setTypeface(typeface);
-        return true;
     }
 
 }

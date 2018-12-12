@@ -5,7 +5,6 @@ public class ParentModel {
     private String Content;
     private String TrackingCode;
     private String Date;
-    private String Response;
     private String Info;
 
     public String getTrackingCode() {
@@ -30,14 +29,6 @@ public class ParentModel {
 
     public void setDate(String date) {
         Date = date;
-    }
-
-    public String getResponse() {
-        return Response;
-    }
-
-    public void setResponse(String response) {
-        Response = response;
     }
 
     public String getInfo() {

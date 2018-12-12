@@ -3,6 +3,7 @@ package www.municipality.ir.takestanmunicipality;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -14,7 +15,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.ContextMenu;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +34,8 @@ import java.util.Collections;
 import me.crosswall.lib.coverflow.CoverFlow;
 import me.crosswall.lib.coverflow.core.PagerContainer;
 import me.relex.circleindicator.CircleIndicator;
+import www.municipality.ir.takestanmunicipality.ContextMenu.FeedContextMenu;
+import www.municipality.ir.takestanmunicipality.ContextMenu.FeedContextMenuManager;
 import www.municipality.ir.takestanmunicipality.HostricalWorks.Historical_Works;
 import www.municipality.ir.takestanmunicipality.IntroduceCity.Introduce_City;
 import www.municipality.ir.takestanmunicipality.IntroductionMunicipality.Introduction_Municipality;
@@ -38,7 +44,7 @@ import www.municipality.ir.takestanmunicipality.Recreation.Recreation;
 import www.municipality.ir.takestanmunicipality.TourismServices.Tourism_Services;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  implements FeedContextMenu.OnFeedContextMenuItemClickListener {
 
     private CountDownTimer timer;
     private CustomTextView name, title, content;
@@ -84,13 +90,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.MainActivity_Toolbar);
         CircleIndicator indicator = findViewById(R.id.MainActivity_Indicator);
         name = findViewById(R.id.ActivityMain_Name);
-        more = findViewById(R.id.ActivityMain_More);
+//        more = findViewById(R.id.ActivityMain_More);
         title = findViewById(R.id.ActivityMain_Title);
         content = findViewById(R.id.ActivityMain_Content);
         image = findViewById(R.id.ActivityMain_Image);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-
 
 
         container = findViewById(R.id.ActivityMain_PagerContainer);
@@ -100,25 +105,23 @@ public class MainActivity extends AppCompatActivity {
         pager.setOffscreenPageLimit(10);
         indicator.setViewPager(pager);
 
+        DisplayMetrics metrics = new DisplayMetrics();
+//        metrics.xdpi;
 
+        Display display = getWindowManager().getDefaultDisplay();
+        Point point = new Point();
+        display.getSize(point);
+        int amount = Double.valueOf(point.x/2.5).intValue();
+        pager.getLayoutParams().width = amount;
 
         new CoverFlow.Builder()
                 .with(pager)
                 .scale(0.3f)
-                .pagerMargin(10)
-                .spaceSize(-10f)
-                .rotationY(15f)
+//                .pagerMargin(10)
+//                .spaceSize(-10f)
+//                .rotationY(15f)
                 .build();
 
-
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//
-//
-//            }
-//        });
         pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -179,7 +182,6 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, "onPageScrollStateChanged", Toast.LENGTH_SHORT).show();
             }
         });
-
 
 
         timer = new CountDownTimer(4000, 1000) {
@@ -245,17 +247,41 @@ public class MainActivity extends AppCompatActivity {
                             ContextCompat.getColor(this, R.color.status_Color)));
         }
 
-        more.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(getApplicationContext(),name);
-//            popup.setOnMenuItemClickListener(getApplicationContext());
-                popup.inflate(R.menu.mainactivity_popup);
-                popup.show();
 
-            }
-        });
+//        more.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                PopupMenu popup = new PopupMenu(getApplicationContext(),name);
+////            popup.setOnMenuItemClickListener(getApplicationContext());
+//                popup.inflate(R.menu.mainactivity_popup);
+//                popup.show();
+//
+//                Log.e("sear", "clicked");
+//                FeedContextMenuManager.getInstance().toggleContextMenuFromView(v, 0, MainActivity.this );
+//
+//            }
+//        });
 
+    }
+
+    @Override
+    public void onReportClick(int feedItem) {
+        FeedContextMenuManager.getInstance().hideContextMenu();
+    }
+
+    @Override
+    public void onSharePhotoClick(int feedItem) {
+        FeedContextMenuManager.getInstance().hideContextMenu();
+    }
+
+    @Override
+    public void onCopyShareUrlClick(int feedItem) {
+        FeedContextMenuManager.getInstance().hideContextMenu();
+    }
+
+    @Override
+    public void onCancelClick(int feedItem) {
+        FeedContextMenuManager.getInstance().hideContextMenu();
     }
 
 //    @Override

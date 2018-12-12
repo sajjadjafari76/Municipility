@@ -3,6 +3,7 @@ package www.municipality.ir.takestanmunicipality.Views;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -12,7 +13,9 @@ import www.municipality.ir.takestanmunicipality.R;
  * Created by sajjadnet on 11/16/2017.
  */
 
-public class CustomTextView extends TextView {
+public class CustomTextView extends AppCompatTextView {
+
+
     public CustomTextView(Context context) {
         super(context);
     }
@@ -27,10 +30,10 @@ public class CustomTextView extends TextView {
         setCustomFont(context,attrs);
     }
 
-    public CustomTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        setCustomFont(context,attrs);
-    }
+//    public CustomTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+//        super(context, attrs, defStyleAttr, defStyleRes);
+//        setCustomFont(context,attrs);
+//    }
 
 
     private void setCustomFont(Context ctx, AttributeSet attrs) {
@@ -44,9 +47,8 @@ public class CustomTextView extends TextView {
         }
     }
 
-    private boolean setCustomFont(Context ctx) {
+    private void setCustomFont(Context ctx) {
         setTypeface(CFProvider.getIRANIANSANS(ctx));
-        return true;
     }
 
 }

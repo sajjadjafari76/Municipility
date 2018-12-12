@@ -4,6 +4,7 @@ package www.municipality.ir.takestanmunicipality.HostricalWorks.Markazi;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -26,19 +27,16 @@ public class Markazi_Afkham extends Fragment {
 
 
     private ArrayList<Drawable> SliderArray = new ArrayList<Drawable>();
-    private View view;
     private ViewPager mPager;
     private CircleIndicator indicator;
     private  int currentPage = 0;
 
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-        view = inflater.inflate(R.layout.fragment_markazi__afkham, container, false);
+        View view = inflater.inflate(R.layout.fragment_markazi__afkham, container, false);
         mPager = view.findViewById(R.id.MarkaziAfkham_Pager);
         indicator = view.findViewById(R.id.MarkaziAfkham_Indigator);
 //        textView = view.findViewById(R.id.TourismServices_Text);
@@ -62,8 +60,6 @@ public class Markazi_Afkham extends Fragment {
             mPager.setAdapter(new SliderAdapter(getActivity(), SliderArray));
             indicator.setViewPager(mPager);
 
-
-            // Auto start of viewpager
             final Handler handler = new Handler();
             final Runnable Update = new Runnable() {
                 public void run() {

@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -53,6 +54,16 @@ public class IntroduceCity_MapsFrag extends Fragment {
 
         CustomButton CityMapOnline = view.findViewById(R.id.CityMapOnline);
         CustomButton CityMapOffline = view.findViewById(R.id.CityMapOffline);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        CityMapOnline.setTypeface(CFProvider.getIRANIANSANS(getActivity()));
+        CityMapOnline.getLayoutParams().width = width / 2;
+        CityMapOffline.setTypeface(CFProvider.getIRANIANSANS(getActivity()));
+        CityMapOffline.getLayoutParams().width = width / 2;
 
         CityMapOffline.setOnClickListener(new View.OnClickListener() {
             @Override

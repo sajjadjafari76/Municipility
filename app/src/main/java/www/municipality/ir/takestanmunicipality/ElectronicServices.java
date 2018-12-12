@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -49,20 +50,16 @@ public class ElectronicServices extends AppCompatActivity implements View.OnClic
 
         for (int i = 0; i < 6 ; i++) {
             if (i==0) {
-                String text = new String();
-                text = "فرم ارزیابی خدمات شهری";
+                String text = "فرم ارزیابی خدمات شهری";
                 data.add(text);
             }else if (i==1) {
-                String text = new String();
-                text = "فرم تکریم ارباب رجوع";
+                String text = "فرم تکریم ارباب رجوع";
                 data.add(text);
             }else if (i==2) {
-                String text = new String();
-                text = "فرم ملاقات مردمی با شهردار";
+                String text = "فرم ملاقات مردمی با شهردار";
                 data.add(text);
             }else if (i==3) {
-                String text = new String();
-                text = "سامانه 137 شهرداری";
+                String text = "سامانه 137 شهرداری";
                 data.add(text);
             }
         }
@@ -94,8 +91,9 @@ public class ElectronicServices extends AppCompatActivity implements View.OnClic
             this.data = data;
         }
 
+        @NonNull
         @Override
-        public MyCustomView onCreateViewHolder(ViewGroup parent, int viewType) {
+        public MyCustomView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             return new MyCustomView(LayoutInflater
                     .from(getApplicationContext()).inflate(R.layout.layout_electronic_item,null));
         }
@@ -107,13 +105,13 @@ public class ElectronicServices extends AppCompatActivity implements View.OnClic
                 holder.view1.setBackgroundColor(ContextCompat.getColor(getApplicationContext(),R.color.back_card));
             }
 
-            holder.textView.setText(data.get(position).toString());
+            holder.textView.setText(data.get(position));
             holder.cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     try {
 
-                        if (!isOnline()) {
+                        if (!Tools.getInstance(getApplicationContext()).isOnline()) {
                             Toast.makeText(ElectronicServices.this, "دسترسی به اینترنت موجود نیست!", Toast.LENGTH_SHORT).show();
                         } else {
                             Intent intent = null;
@@ -144,7 +142,7 @@ public class ElectronicServices extends AppCompatActivity implements View.OnClic
                         }
                     }catch (Exception e){
                         Toast.makeText(ElectronicServices.this, "اینترنت در دسترس نیست!", Toast.LENGTH_SHORT).show();
-                        Log.e("error", e.getStackTrace() + " | " + e.toString());
+                        Log.e("error", e.toString() + " | " + e.toString());
                     }
                 }
             });
@@ -172,15 +170,4 @@ public class ElectronicServices extends AppCompatActivity implements View.OnClic
         }
     }
 
-    public boolean isOnline() {
-        ConnectivityManager manager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = manager.getActiveNetworkInfo();
-        if (activeNetworkInfo != null)
-        {
-            return (activeNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI
-                    ||
-                    activeNetworkInfo.getType() == ConnectivityManager.TYPE_MOBILE) ?  true : false;
-        }
-        return false;
-    }
 }

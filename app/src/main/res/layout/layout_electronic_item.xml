@@ -34,7 +34,7 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_keyboard_arrow_left"
+            app:srcCompat="@drawable/ic_keyboard_arrow_left"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"/>
 
@@ -78,7 +78,7 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/ic_keyboard_arrow_left"
+            app:srcCompat="@drawable/ic_keyboard_arrow_left"
             android:layout_centerVertical="true"
             android:layout_alignParentLeft="true"/>
 

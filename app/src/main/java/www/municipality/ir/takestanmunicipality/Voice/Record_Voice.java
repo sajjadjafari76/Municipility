@@ -36,10 +36,10 @@ public class Record_Voice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record__voice);
 
-        play = (Button) findViewById(R.id.play);
-        stop = (Button) findViewById(R.id.stop);
-        record = (Button) findViewById(R.id.record);
-        recordVoice_Send = (Button) findViewById(R.id.RecordVoice_Send);
+        play = findViewById(R.id.play);
+        stop = findViewById(R.id.stop);
+        record = findViewById(R.id.record);
+        recordVoice_Send = findViewById(R.id.RecordVoice_Send);
         stop.setEnabled(false);
         play.setEnabled(false);
         play.setTypeface(CFProvider.getIRANIANSANS(getApplicationContext()));

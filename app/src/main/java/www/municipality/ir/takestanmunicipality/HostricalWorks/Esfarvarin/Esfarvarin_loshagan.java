@@ -4,6 +4,7 @@ package www.municipality.ir.takestanmunicipality.HostricalWorks.Esfarvarin;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -22,17 +23,16 @@ import www.municipality.ir.takestanmunicipality.TourismServices.SliderAdapter;
 
 public class Esfarvarin_loshagan extends Fragment {
 
-    private ArrayList<Drawable> SliderArray = new ArrayList<Drawable>();
-    private View view;
+    private ArrayList<Drawable> SliderArray = new ArrayList<>();
     private ViewPager mPager;
     private CircleIndicator indicator;
     private  int currentPage = 0;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_esfarvarin_loshagan, container, false);
+        View view = inflater.inflate(R.layout.fragment_esfarvarin_loshagan, container, false);
         mPager = view.findViewById(R.id.EsfarvarinLoshagan_Pager);
         indicator = view.findViewById(R.id.EsfarvarinLoshagan_Indigator);
 //        textView = view.findViewById(R.id.TourismServices_Text);
@@ -51,15 +51,12 @@ public class Esfarvarin_loshagan extends Fragment {
 
     }
 
-
     public void ImageSlider() {
 
         if (SliderArray.size() != 0) {
             mPager.setAdapter(new SliderAdapter(getActivity(), SliderArray));
             indicator.setViewPager(mPager);
 
-
-            // Auto start of viewpager
             final Handler handler = new Handler();
             final Runnable Update = new Runnable() {
                 public void run() {
@@ -79,7 +76,4 @@ public class Esfarvarin_loshagan extends Fragment {
         }
 
     }
-
-
-
 }

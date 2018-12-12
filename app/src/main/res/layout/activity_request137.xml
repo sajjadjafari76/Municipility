@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="56dp"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_left_arrow"
+                app:srcCompat="@drawable/ic_left_arrow"
                 android:paddingRight="14dp"
                 android:paddingLeft="14dp"
                 android:paddingTop="5dp"
@@ -40,8 +40,8 @@
                 android:layout_marginLeft="1dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:layout_alignParentLeft="true"
-                android:foreground="?android:attr/selectableItemBackgroundBorderless"/>
+                android:layout_alignParentLeft="true"/>
+               <!-- android:foreground="?android:attr/selectableItemBackgroundBorderless"-->
 
 
             <ImageView

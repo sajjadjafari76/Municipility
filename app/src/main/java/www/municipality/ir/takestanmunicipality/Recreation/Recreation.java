@@ -38,8 +38,18 @@ public class Recreation extends AppCompatActivity implements View.OnClickListene
 //        recyclerView.setAdapter(new MyCustomAdapter(getdata()));
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+//        Bundle bundle = new Bundle();
+//        bundle.putSerializable("data", title);
         transaction.replace(R.id.Recreation_Frame, new Recreation_Frag(title));
         transaction.commit();
+
+//        Bundle bundle = new Bundle();
+//        bundle.putString("data", title.getText().toString());
+//        Recreation_Frag frag = new Recreation_Frag();
+//        frag.setArguments(bundle);
+//        transaction.replace(R.id.Recreation_Frame, frag);
+//        transaction.commit();
 
 
 

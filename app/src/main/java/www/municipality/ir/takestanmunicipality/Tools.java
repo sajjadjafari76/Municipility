@@ -2,6 +2,9 @@ package www.municipality.ir.takestanmunicipality;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 /**
  * Created by "SAJJAD JAFARI"
@@ -51,32 +54,20 @@ public class Tools {
         text.apply();
     }
 
-    public boolean read(String key, boolean defValue) {
-        return sharedPreferences.getBoolean(key, defValue);
+    public boolean isOnline() {
+        ConnectivityManager manager = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = manager.getActiveNetworkInfo();
+        if (activeNetworkInfo != null)
+        {
+            return (activeNetworkInfo.getType() == ConnectivityManager.TYPE_WIFI
+                    ||
+                    activeNetworkInfo.getType() == ConnectivityManager.TYPE_MOBILE) ?  true : false;
+        }
+        return false;
     }
 
-    public void write(String key, boolean value) {
-        SharedPreferences.Editor text = sharedPreferences.edit();
-        text.putBoolean(key , value);
-        text.apply();
-    }
-
-    public int read(String key, int defValue) {
-        return sharedPreferences.getInt(key, defValue);
-    }
-    public void write(String key, int value) {
-        SharedPreferences.Editor number = sharedPreferences.edit();
-        number.putInt(key, value);
-        number.apply();
-    }
-    public boolean Exist(String key) {
-        return sharedPreferences.contains(key);
-    }
-
-    public void Clear() {
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.clear();
-        editor.apply();
+    public int dpToPx(int dp) {
+        return (int) (dp * Resources.getSystem().getDisplayMetrics().density);
     }
 
 }

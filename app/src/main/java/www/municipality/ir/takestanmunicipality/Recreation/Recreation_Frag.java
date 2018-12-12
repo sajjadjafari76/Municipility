@@ -39,14 +39,18 @@ public class Recreation_Frag extends Fragment {
     }
     private CustomTextView title;
 
-    public Recreation_Frag( CustomTextView title) {
-        this.title = title;
+    public Recreation_Frag(CustomTextView textView) {
+        this.title = textView;
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+//        Bundle bundle = getArguments();
+//        if (bundle != null) {
+//            title = (CustomTextView) bundle.getSerializable("data");
+//        }
         RecyclerView recyclerView;
         View view;
         view = inflater.inflate(R.layout.fragment_recreation_, container, false);

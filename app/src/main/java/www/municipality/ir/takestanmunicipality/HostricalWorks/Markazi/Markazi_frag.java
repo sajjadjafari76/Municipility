@@ -2,6 +2,7 @@ package www.municipality.ir.takestanmunicipality.HostricalWorks.Markazi;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
@@ -20,19 +21,11 @@ import java.util.List;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class Markazi_frag extends Fragment {
 
 
-    public Markazi_frag() {
-        // Required empty public constructor
-    }
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         RecyclerView recyclerView;
@@ -55,16 +48,13 @@ public class Markazi_frag extends Fragment {
 
         for (int i = 0; i < 7 ; i++) {
             if (i==0) {
-                String text = new String();
-                text = "امامزاده افخم نرگه";
+                String text =  "امامزاده افخم نرگه";
                 data.add(text);
             }else if (i==1) {
-                String text = new String();
-                text = "امامزاده خوندو تاکستان";
+                String text = "امامزاده خوندو تاکستان";
                 data.add(text);
             }else if (i==2) {
-                String text = new String();
-                text = "امامزاده زرلان نرگه";
+                String text = "امامزاده زرلان نرگه";
                 data.add(text);
             }
         }
@@ -78,8 +68,9 @@ public class Markazi_frag extends Fragment {
             this.data = data;
         }
 
+        @NonNull
         @Override
-        public MyCustomAdapter.MyCustomView onCreateViewHolder(ViewGroup parent, int viewType) {
+        public MyCustomAdapter.MyCustomView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             return new MyCustomAdapter.MyCustomView(LayoutInflater
                     .from(getActivity()).inflate(R.layout.layout_electronic_item,null));
         }
@@ -94,7 +85,7 @@ public class Markazi_frag extends Fragment {
                 holder.view2.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.back_card));
             }
 
-            holder.textView.setText(data.get(position).toString());
+            holder.textView.setText(data.get(position));
             switch (position) {
                 case 0:
                     holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.afkham));

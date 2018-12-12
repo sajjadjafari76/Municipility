@@ -25,7 +25,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_margin="8dp"
-        android:src="@drawable/ic_keyboard_arrow_right"
+        app:srcCompat="@drawable/ic_keyboard_arrow_right"
         app:backgroundTint="#22A7E5" />
 
 
@@ -36,7 +36,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_margin="8dp"
-        android:src="@drawable/ic_speaker1"
+        app:srcCompat="@drawable/ic_speaker1"
         app:backgroundTint="#22A7E5" />
 
 

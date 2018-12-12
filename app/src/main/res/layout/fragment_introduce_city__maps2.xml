@@ -5,32 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".IntroduceCity.Maps.IntroduceCity_MapsFrag">
 
-   <!--  <android.support.design.widget.TabLayout
-         android:layout_width="match_parent"
-         android:layout_height="?android:attr/actionBarSize"
-         android:id="@+id/MapsFrag_TabLayout"
-         android:background="#F9F8FD"/>
-
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/MapsFrag_ViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />-->
-
 
     <www.municipality.ir.takestanmunicipality.Views.CustomButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="90dp"
         android:text="نقشه آنلاین"
-        android:id="@+id/CityMapOnline"/>
+        android:textSize="16sp"
+        android:id="@+id/CityMapOnline"
+        android:backgroundTint="#EEE"
+        android:layout_marginTop="-20dp"
+        android:drawableLeft="@drawable/ic_address"/>
 
     <www.municipality.ir.takestanmunicipality.Views.CustomButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
         android:text="نقشه آفلاین"
-        android:id="@+id/CityMapOffline"/>
+        android:id="@+id/CityMapOffline"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColor="#FFF"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@drawable/ic_address1"/>
 
 </LinearLayout>

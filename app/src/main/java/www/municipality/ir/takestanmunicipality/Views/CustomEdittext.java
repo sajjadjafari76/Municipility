@@ -2,13 +2,13 @@ package www.municipality.ir.takestanmunicipality.Views;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v7.widget.AppCompatEditText;
 import android.util.AttributeSet;
-import android.widget.EditText;
 
 import www.municipality.ir.takestanmunicipality.R;
 
 
-public class CustomEdittext extends EditText {
+public class CustomEdittext extends AppCompatEditText {
 
     public CustomEdittext(Context context) {
         super(context);
@@ -24,10 +24,10 @@ public class CustomEdittext extends EditText {
         setCustomFont(context,attrs);
     }
 
-    public CustomEdittext(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        setCustomFont(context,attrs);
-    }
+//    public CustomEdittext(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+//        super(context, attrs, defStyleAttr, defStyleRes);
+//        setCustomFont(context,attrs);
+//    }
 
     private void setCustomFont(Context ctx, AttributeSet attrs) {
         TypedArray array = ctx.obtainStyledAttributes(attrs, R.styleable.CustomTextView);
@@ -40,9 +40,8 @@ public class CustomEdittext extends EditText {
         }
     }
 
-    private boolean setCustomFont(Context ctx) {
+    private void setCustomFont(Context ctx) {
         setTypeface(CFProvider.getIRANIANSANS(ctx));
-        return true;
     }
 
 }

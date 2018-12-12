@@ -2,6 +2,7 @@ package www.municipality.ir.takestanmunicipality.HostricalWorks.Esfarvarin;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
@@ -13,24 +14,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 
-
 public class Esfarvarin_frag extends Fragment {
 
-
-    public Esfarvarin_frag() {
-        // Required empty public constructor
-    }
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         RecyclerView recyclerView;
@@ -39,18 +31,15 @@ public class Esfarvarin_frag extends Fragment {
 
         recyclerView = view.findViewById(R.id.EsfarvarinFrag_Recycler);
 
-//        title = view.findViewById(R.id.IntroduceCity_Title);
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
-        recyclerView.setAdapter(new MyCustomAdapter(getdata()));
-
+        recyclerView.setAdapter(new MyCustomAdapter(getData()));
 
         return view;
-
     }
 
 
-    private List<String> getdata() {
+    private List<String> getData() {
         List<String> data = new ArrayList<>();
 
         for (int i = 0; i < 4 ; i++) {
@@ -79,14 +68,15 @@ public class Esfarvarin_frag extends Fragment {
             this.data = data;
         }
 
+        @NonNull
         @Override
-        public MyCustomAdapter.MyCustomView onCreateViewHolder(ViewGroup parent, int viewType) {
+        public MyCustomAdapter.MyCustomView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             return new MyCustomAdapter.MyCustomView(LayoutInflater
                     .from(getActivity()).inflate(R.layout.layout_electronic_item,null));
         }
 
         @Override
-        public void onBindViewHolder(MyCustomAdapter.MyCustomView holder, final int position) {
+        public void onBindViewHolder(@NonNull MyCustomAdapter.MyCustomView holder, final int position) {
 
             holder.view1.setVisibility(View.GONE);
             holder.view2.setVisibility(View.VISIBLE);
@@ -95,7 +85,7 @@ public class Esfarvarin_frag extends Fragment {
                 holder.view2.setBackgroundColor(ContextCompat.getColor(getActivity(),R.color.back_card));
             }
 
-            holder.textView.setText(data.get(position).toString());
+            holder.textView.setText(data.get(position));
             switch (position) {
                 case 0:
                     holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.esfarvarin));

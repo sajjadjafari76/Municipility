@@ -1,6 +1,7 @@
 package www.municipality.ir.takestanmunicipality;
 
 import android.app.ProgressDialog;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,8 +23,11 @@ public class WebView_Electronic extends AppCompatActivity {
         webView.setInitialScale(100);
         webView.getSettings().setBuiltInZoomControls(true);
 
-        String info = getIntent().getExtras().getString("info");
-//        Toast.makeText(this, info + " |", Toast.LENGTH_SHORT).show();
+        String info = null;
+        if (getIntent().getExtras() != null) {
+            info = getIntent().getExtras().getString("info");
+        }
+
         if (info != null) {
             switch (info) {
                 case "1":
@@ -53,7 +57,7 @@ public class WebView_Electronic extends AppCompatActivity {
 
         private ProgressDialog progressBar;
 
-        public MyCustomBrowser(ProgressDialog progressBar) {
+        MyCustomBrowser(ProgressDialog progressBar) {
             this.progressBar = progressBar;
             progressBar.show();
         }

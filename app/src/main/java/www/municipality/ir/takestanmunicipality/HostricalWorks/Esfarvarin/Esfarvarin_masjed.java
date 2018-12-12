@@ -22,8 +22,7 @@ import www.municipality.ir.takestanmunicipality.TourismServices.SliderAdapter;
 
 public class Esfarvarin_masjed extends Fragment {
 
-    private ArrayList<Drawable> SliderArray = new ArrayList<Drawable>();
-    private View view;
+    private ArrayList<Drawable> SliderArray = new ArrayList<>();
     private ViewPager mPager;
     private CircleIndicator indicator;
     private  int currentPage = 0;
@@ -32,11 +31,9 @@ public class Esfarvarin_masjed extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_esfarvarin_masjed, container, false);
+        View view = inflater.inflate(R.layout.fragment_esfarvarin_masjed, container, false);
         mPager = view.findViewById(R.id.EsfarvarinMasjed_Pager);
         indicator = view.findViewById(R.id.EsfarvarinMasjed_Indigator);
-//        textView = view.findViewById(R.id.TourismServices_Text);
-//        textView.setTypeface(CFProvider.getIRANIANSANS(getActivity()));
 
         for (int i = 0; i <3 ; i++) {
             if (i == 0) {
@@ -52,15 +49,12 @@ public class Esfarvarin_masjed extends Fragment {
 
     }
 
-
     public void ImageSlider() {
 
         if (SliderArray.size() != 0) {
             mPager.setAdapter(new SliderAdapter(getActivity(), SliderArray));
             indicator.setViewPager(mPager);
 
-
-            // Auto start of viewpager
             final Handler handler = new Handler();
             final Runnable Update = new Runnable() {
                 public void run() {
@@ -80,6 +74,5 @@ public class Esfarvarin_masjed extends Fragment {
         }
 
     }
-
 
 }

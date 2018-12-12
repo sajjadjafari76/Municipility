@@ -22,8 +22,7 @@ import www.municipality.ir.takestanmunicipality.TourismServices.SliderAdapter;
 public class Khoramdasht_Radakan extends Fragment {
 
 
-    private ArrayList<Drawable> SliderArray = new ArrayList<Drawable>();
-    private View view;
+    private ArrayList<Drawable> SliderArray = new ArrayList<>();
     private ViewPager mPager;
     private CircleIndicator indicator;
     private  int currentPage = 0;
@@ -32,7 +31,7 @@ public class Khoramdasht_Radakan extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_khoramdasht__radakan, container, false);
+        View view = inflater.inflate(R.layout.fragment_khoramdasht__radakan, container, false);
         mPager = view.findViewById(R.id.KhoramdashtRadakan_Pager);
         indicator = view.findViewById(R.id.KhoramdashtRadakan_Indigator);
 //        textView = view.findViewById(R.id.TourismServices_Text);
@@ -50,7 +49,6 @@ public class Khoramdasht_Radakan extends Fragment {
         ImageSlider();
 
         return view;
-
     }
 
     public void ImageSlider() {
@@ -60,7 +58,6 @@ public class Khoramdasht_Radakan extends Fragment {
             indicator.setViewPager(mPager);
 
 
-            // Auto start of viewpager
             final Handler handler = new Handler();
             final Runnable Update = new Runnable() {
                 public void run() {
@@ -80,6 +77,5 @@ public class Khoramdasht_Radakan extends Fragment {
         }
 
     }
-
 
 }

@@ -1,6 +1,7 @@
 package www.municipality.ir.takestanmunicipality.Page_137;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +22,10 @@ import java.util.List;
 
 import www.municipality.ir.takestanmunicipality.DataModel.TrackingCodeModel;
 import www.municipality.ir.takestanmunicipality.IntroductionMunicipality.IntroduceMunicipility_Mayor;
+import www.municipality.ir.takestanmunicipality.MainActivity;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.Page_137.Request.Request137;
+import www.municipality.ir.takestanmunicipality.Tools;
 import www.municipality.ir.takestanmunicipality.Views.CFProvider;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 
@@ -91,6 +95,24 @@ public class Main_137 extends AppCompatActivity {
         Track = findViewById(R.id.Main137_Track);
         Main137_Backwards = findViewById(R.id.Main137_Backwards);
 
+
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+
+        Point point = new Point();
+
+        Log.e("metric" , metrics.ydpi + " ");
+        Log.e("point" , point.y + " ");
+
+//        Register.getLayoutParams().width = Double. metrics.ydpi /2;
+//        Register.getLayoutParams().height = ;
+//
+//        MyRequest.getLayoutParams().width = ;
+//        MyRequest.getLayoutParams().height = ;
+//
+//        Track.getLayoutParams().width = ;
+//        Track.getLayoutParams().height = ;
+
+
         MyRequest.setTypeface(CFProvider.getIRANIANSANS(getApplicationContext()));
         Register.setTypeface(CFProvider.getIRANIANSANS(getApplicationContext()));
         Track.setTypeface(CFProvider.getIRANIANSANS(getApplicationContext()));
@@ -105,7 +127,11 @@ public class Main_137 extends AppCompatActivity {
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Page_137.class));
+                if (Tools.getInstance(getApplicationContext()).isOnline()) {
+                    startActivity(new Intent(getApplicationContext(), Page_137.class));
+                }else {
+                    Toast.makeText(Main_137.this, "دسترسی به اینترنت موجود نیست!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

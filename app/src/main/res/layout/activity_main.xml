@@ -38,7 +38,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.2"
             android:gravity="center"
-            android:text="خدمات الکترونیکی شهرداری"
+            android:text="سامانه ارتباط مردمی 137"
             android:textColor="#000"
             android:textSize="16sp" />
 
@@ -110,13 +110,13 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/MainActivity_Toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="?android:attr/actionBarSize"
         app:contentInsetStart="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
+<!--
             <ImageView
                 android:id="@+id/ActivityMain_More"
                 android:layout_width="32dp"
@@ -125,7 +125,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="8dp"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_more" />
+                app:srcCompat="@drawable/ic_more" />-->
 
         </RelativeLayout>
 

@@ -36,7 +36,7 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:padding="12dp"
-                    android:src="@drawable/ic_check_mark" />
+                    app:srcCompat="@drawable/ic_check_mark" />
 
                 <www.municipality.ir.takestanmunicipality.Views.CustomTextView
                     android:id="@+id/Parent_Content"
