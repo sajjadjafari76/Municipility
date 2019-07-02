@@ -78,7 +78,7 @@
         <!--google map-->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCzAw8ST-YguIH4G2RrTJ_mGN4SlYgWk6g"/>
+            android:value="AIzaSyCaXHCojQzjZgo4BmXDrrLWseslOY0Kdqo"/>
 
          <!--pushe-->
         <receiver android:name="co.ronash.pushe.receiver.UpdateReceiver" >

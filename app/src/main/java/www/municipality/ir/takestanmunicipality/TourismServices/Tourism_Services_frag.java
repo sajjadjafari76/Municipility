@@ -49,13 +49,10 @@ public class Tourism_Services_frag extends Fragment {
                 new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(new MyCustomAdapter(getdata()));
 
-
         title.setText("خدمات گردشگری");
 
         return view;
     }
-
-
 
     private List<String> getdata() {
         List<String> data = new ArrayList<>();
@@ -76,6 +73,10 @@ public class Tourism_Services_frag extends Fragment {
             }else if (i == 3){
                 String text = new String();
                 text = "برگزاری جشن ملی انگور در تاکستان";
+                data.add(text);
+            }else if (i == 4){
+                String text = new String();
+                text = "مراسم شب چله تاکستان";
                 data.add(text);
             }
         }
@@ -130,6 +131,11 @@ public class Tourism_Services_frag extends Fragment {
                         case 3:
                             fragment = new TourismServicesGrapes();
                             title.setText("برگزاری جشن ملی انگور در تاکستان");
+                            tag = "history";
+                            break;
+                        case 4:
+                            fragment = new Tourism_Services_yalda();
+                            title.setText("مراسم شب چله تاکستان");
                             tag = "history";
                             break;
                     }

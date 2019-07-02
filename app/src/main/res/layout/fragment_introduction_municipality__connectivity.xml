@@ -13,8 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -26,7 +25,7 @@
             <www.municipality.ir.takestanmunicipality.Views.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="آدرس الكترونيكي اختصاصي شهردار تاكستان مهندس حسين بهزادپور:"
+                android:text="آدرس الكترونيكي اختصاصي شهردار تاكستان مهندس محمد پیری:"
                 android:textColor="#000"
                 android:textSize="@dimen/Standard_Size_Text"
                 android:layout_marginTop="25dp"
@@ -38,7 +37,7 @@
             <www.municipality.ir.takestanmunicipality.Views.CustomTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" h.behzadpour@takestancity.ir"
+                android:text="mohammad.piri@takestancity.ir"
                 android:textColor="#000"
                 android:textSize="@dimen/Standard_Size_Text"
                 android:layout_margin="8dp"

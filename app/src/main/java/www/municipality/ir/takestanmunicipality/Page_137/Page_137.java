@@ -97,10 +97,14 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
     private ImageView page_137_Backwards;
     private RelativeLayout container;
     private CustomEdittext text, address, name, family, nationalCode, phone;
-    List<String> category = new ArrayList<>();
-    spinnerAdapter adapter;
+    private List<String> category = new ArrayList<>();
+    private List<String> subCategory = new ArrayList<>();
+    private List<String> subCategoryOne = new ArrayList<>();
+    spinnerAdapter adapter, adapterSub, adapterSubOne;
+    private Spinner SubCategory, SubCategoryOne;
+    private List<String> Result = new ArrayList<>();
 
-//    private MapView mapView;
+    //    private MapView mapView;
     private GoogleMap mMap;
     private Marker pointerMarker;
     WorkaroundMapFragment myMap;
@@ -130,6 +134,8 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
         progressDialog.show();
 
         final Spinner spinnerSubjectType = findViewById(R.id.Page_137_SpinnerSubjectType);
+        SubCategory = findViewById(R.id.Page_137_SpinnerSubjectTypeSubCategory);
+        SubCategoryOne = findViewById(R.id.Page_137_SpinnerSubjectTypeSubCategoryOne);
         final CustomTextView btn = findViewById(R.id.Page_137_Btn);
         Page_137_Result = findViewById(R.id.Page_137_Result);
 //        Page137_AddressName = findViewById(R.id.Page137_AddressName);
@@ -152,12 +158,12 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
         Display display = getWindowManager().getDefaultDisplay();
         Point point = new Point();
         display.getSize(point);
-        int amount = Double.valueOf(point.x/1.5).intValue();
+        int amount = Double.valueOf(point.x / 1.5).intValue();
         btn.getLayoutParams().width = amount;
 
 
         /*-- if user used previously of page 137 --*/
-        if (MyTokenManager.getInstance(this).getTrackingCode().size() != 0)  {
+        if (MyTokenManager.getInstance(this).getTrackingCode().size() != 0) {
 
             name.setText(MyTokenManager.getInstance(this).getTrackingCode().get(0).getName());
             family.setText(MyTokenManager.getInstance(this).getTrackingCode().get(0).getFamily());
@@ -167,66 +173,78 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
         }
 
         adapter = new spinnerAdapter(this, R.layout.layout_custom_spinner);
+        adapterSub = new spinnerAdapter(this, R.layout.layout_custom_spinner);
+        adapterSubOne = new spinnerAdapter(this, R.layout.layout_custom_spinner);
 
 
         StringRequest request1 = new StringRequest(Request.Method.POST, Globals.ApiURLAll2 + "retrieve", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("Loggggg" , response + " |");
-                        progressDialog.dismiss();
-                        Log.e("Page137_Response", response);
-                        try {
-                            JSONArray array1 = new JSONArray(response);
+                progressDialog.dismiss();
+                Log.e("Page137_Response", response);
+                try {
+                    JSONArray array1 = new JSONArray(response);
 
-                            for (int i = 0; i < array1.length(); i++) {
-                                adapter.add(array1.getJSONArray(i).getString(1));
+                    SubCategory.setVisibility(View.GONE);
+                    SubCategoryOne.setVisibility(View.GONE);
+                    Result.clear();
 
-                                HashMap<String, String> data = new HashMap<>();
-                                data.put("id", array1.getJSONArray(i).getString(0));
-                                data.put("name", array1.getJSONArray(i).getString(1));
-                                category.add(array1.getJSONArray(i).getString(0));
-//                                Log.e("datadata22", array1.getJSONArray(1).getString(0) + " | ");
+                    final List<CategoryModel> CategoryArray = new ArrayList<>();
 
+                    for (int i = 0; i < array1.length(); i++) {
+
+                        CategoryModel model = new CategoryModel();
+
+                        model.setCatId(array1.getJSONObject(i).getString("id"));
+                        model.setTitle(array1.getJSONObject(i).getString("id"));
+
+                        CategoryArray.add(model);
+                        category.add(array1.getJSONObject(i).getString("title"));
+
+                    }
+
+
+                    adapter.addAll(category);
+                    adapter.add("یک موضوع را انتخاب کنید!");
+                    spinnerSubjectType.setAdapter(adapter);
+                    spinnerSubjectType.setSelection(adapter.getCount());
+
+
+                    spinnerSubjectType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            if (position > (category.size() - 1)) {
+
+                            } else {
+                                StepTwo(CategoryArray.get(position).getCatId());
+//
                             }
-                            adapter.add("یک موضوع را انتخاب کنید!");
-                            spinnerSubjectType.setAdapter(adapter);
-                            spinnerSubjectType.setSelection(adapter.getCount());
 
-                            spinnerSubjectType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                @Override
-                                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                    if (position > (category.size()-1)){
-
-                                    }else {
-                                        Log.e("3434", position + " | " + category.size());
-                                        type = category.get((position));
-                                        Log.e("3434", type + " | ");
-                                    }
-
-                                }
-
-                                @Override
-                                public void onNothingSelected(AdapterView<?> parent) {
-
-                                }
-                            });
-                        } catch (JSONException e) {
-                            e.printStackTrace();
                         }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(Page_137.this, "با مشکلی مواجه شد لطفا دوباره تلاش کنید!", Toast.LENGTH_SHORT).show();
-                Log.e("Page137_Error" , error.toString() + " |");
+                Log.e("Page137_Error", error.toString() + " |");
                 progressDialog.dismiss();
             }
-        }){
+        }) {
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
+                params.put("request", "t1");
                 return params;
             }
 
@@ -301,7 +319,6 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
     }
 
 
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -337,7 +354,7 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
 
         LatLng takestan = new LatLng(36.06852, 49.69690);
 //        mMap.addMarker(new MarkerOptions().position(takestan).title("تاکستان"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(takestan,13));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(takestan, 13));
 
     }
 
@@ -470,7 +487,10 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
         switch (v.getId()) {
             case R.id.Page_137_Btn://click for send data to server
 
-                if (text.getText().toString().isEmpty() || text.getText().toString().equals("")) {
+                Log.e("derrr",Result.toString() + " | " + Result.size());
+                if (Result.size() != 3) {
+                    Toast.makeText(this, "موضوع نمیتواند خالی باشد!", Toast.LENGTH_SHORT).show();
+                } else if (text.getText().toString().isEmpty() || text.getText().toString().equals("")) {
                     Toast.makeText(this, "متن پیام نمیتواند خالی باشد!", Toast.LENGTH_SHORT).show();
                 } else if (address.getText().toString().isEmpty() || address.getText().toString().equals("")) {
                     Toast.makeText(this, "آدرس نمیتواند خالی باشد!", Toast.LENGTH_SHORT).show();
@@ -480,8 +500,6 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
                     Toast.makeText(this, "فامیلی نمیتواند خالی باشد!", Toast.LENGTH_SHORT).show();
                 } else if (nationalCode.getText().toString().length() != 10) {
                     Toast.makeText(this, "کد ملی رو درست وارد کنید!", Toast.LENGTH_SHORT).show();
-                } else if (type == null) {
-                    Toast.makeText(this, "لطفا موضوع خود را انتخاب کنید!", Toast.LENGTH_SHORT).show();
                 } else if (phone.getText().toString().isEmpty() || phone.getText().toString().equals("")) {
                     Toast.makeText(this, "شماره موبایل نمیتواند خالی باشد!", Toast.LENGTH_SHORT).show();
                 } else if (phone.getText().toString().length() != 11) {
@@ -495,7 +513,7 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
                         data.put("family", family.getText().toString());
                         data.put("mobile", phone.getText().toString());
                         data.put("nm", nationalCode.getText().toString());
-                        data.put("type", type);
+                        data.put("type", Result.get(2)+","+Result.get(0)+","+Result.get(1));
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -561,7 +579,6 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
         Log.e("object", object.toString() + " |");
 
 
-
         if (selectedVideoPath != null) {
             Log.e("type", "Video");
 
@@ -581,7 +598,7 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
             Tools.getInstance(this).write("voice", "");
 
             UploadContent(VoicePath, object.toString(), Globals.ApiURLAll2 + "reciver");
-        }else {
+        } else {
 
             Log.e("dataNull", "null");
             UploadContent(VoicePath, object.toString(), Globals.ApiURLAll2 + "reciver");
@@ -794,7 +811,7 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
         return path;
     }
 
-    public void UploadContent(String File, String Content, String Url){
+    public void UploadContent(String File, String Content, String Url) {
 
         AsyncHttpPost post = new AsyncHttpPost(Url);
 
@@ -822,61 +839,61 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
 
                 Log.e("UploadResponse", result + " |");
 
-                    try {
+                try {
 
-                        final JSONObject jsonObject = new JSONObject(result);
-                        if (jsonObject.getString("status").equals("0")) {
-                            Log.e("mymessage", jsonObject.getString("msg") + " | ");
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
+                    final JSONObject jsonObject = new JSONObject(result);
+                    if (jsonObject.getString("status").equals("0")) {
+                        Log.e("mymessage", jsonObject.getString("msg") + " | ");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
 
-                                    progressDialog.dismiss();
-                                    try {
-                                        Toast.makeText(Page_137.this, jsonObject.getString("msg") + "", Toast.LENGTH_LONG).show();
-                                    } catch (JSONException e1) {
-                                        e1.printStackTrace();
-                                    }
-
+                                progressDialog.dismiss();
+                                try {
+                                    Toast.makeText(Page_137.this, jsonObject.getString("msg") + "", Toast.LENGTH_LONG).show();
+                                } catch (JSONException e1) {
+                                    e1.printStackTrace();
                                 }
-                            });
-                        }else {
-                            TrackingCodeModel data = new TrackingCodeModel();
-                            data.setAddress(address.getText().toString());
-                            data.setType(type);
-                            data.setCode(jsonObject.getString("trackcode"));
-                            data.setPhone(phone.getText().toString());
-                            data.setName(name.getText().toString());
-                            data.setFamily(family.getText().toString());
-                            data.setNationalCode(nationalCode.getText().toString());
-                            data.setContent(text.getText().toString());
 
-                            MyTokenManager.getInstance(getBaseContext()).setTrackingCode(data);
+                            }
+                        });
+                    } else {
+                        TrackingCodeModel data = new TrackingCodeModel();
+                        data.setAddress(address.getText().toString());
+                        data.setType(type);
+                        data.setCode(jsonObject.getString("trackcode"));
+                        data.setPhone(phone.getText().toString());
+                        data.setName(name.getText().toString());
+                        data.setFamily(family.getText().toString());
+                        data.setNationalCode(nationalCode.getText().toString());
+                        data.setContent(text.getText().toString());
 
-                            Log.e("mymessage", jsonObject.getString("msg") + " | ");
-                            runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
+                        MyTokenManager.getInstance(getBaseContext()).setTrackingCode(data);
 
-                                    clear();
-                                    VoicePath = null;
-                                    imgDecodableString = null;
-                                    selectedVideoPath = null;
-                                    Page_137_Result.setText("");
+                        Log.e("mymessage", jsonObject.getString("msg") + " | ");
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
 
-                                    progressDialog.dismiss();
-                                    try {
-                                        Toast.makeText(Page_137.this, jsonObject.getString("msg") + "", Toast.LENGTH_LONG).show();
-                                    } catch (JSONException e1) {
-                                        e1.printStackTrace();
-                                    }
+                                clear();
+                                VoicePath = null;
+                                imgDecodableString = null;
+                                selectedVideoPath = null;
+                                Page_137_Result.setText("");
+
+                                progressDialog.dismiss();
+                                try {
+                                    Toast.makeText(Page_137.this, jsonObject.getString("msg") + "", Toast.LENGTH_LONG).show();
+                                } catch (JSONException e1) {
+                                    e1.printStackTrace();
                                 }
-                            });
-                        }
-                    } catch (JSONException e11) {
-                        e11.printStackTrace();
-                        Log.e("mymessage", e11.toString() + " | ");
+                            }
+                        });
                     }
+                } catch (JSONException e11) {
+                    e11.printStackTrace();
+                    Log.e("mymessage", e11.toString() + " | ");
+                }
 
             }
         });
@@ -909,16 +926,16 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
 //                Page137_AddressName.setText("Searching Current Address");
 //            }
 
-            StringRequest request1 = new StringRequest(Request.Method.GET, "https://map.ir/reverse?lon="+longitude +"&lat="+ latitude, new Response.Listener<String>() {
+            StringRequest request1 = new StringRequest(Request.Method.GET, "https://map.ir/reverse?lon=" + longitude + "&lat=" + latitude, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     Log.e("Page137_Response", response);
                     try {
 
                         JSONObject object = new JSONObject(response);
-                        Log.e("Page137_Respons121e",  object.getString("address"));
+                        Log.e("Page137_Respons121e", object.getString("address"));
 
-                        address.setText(object.getString("country") + " ، "  + object.getString("address_compact") + " " + object.getString("village") );
+                        address.setText(object.getString("country") + " ، " + object.getString("address_compact") + " " + object.getString("village"));
 
 
                     } catch (Exception e) {
@@ -930,10 +947,10 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(Page_137.this, "با مشکلی مواجه شد لطفا دوباره تلاش کنید!", Toast.LENGTH_SHORT).show();
-                    Log.e("Page137_Error" , error.toString() + " |");
+                    Log.e("Page137_Error", error.toString() + " |");
 
-                                   }
-            }){
+                }
+            }) {
 
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
@@ -945,7 +962,7 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
 
             };
 
-            Log.e("Page137_Erro11r" , request1.getUrl() + " |");
+            Log.e("Page137_Erro11r", request1.getUrl() + " |");
 
 
             request1.setRetryPolicy(new DefaultRetryPolicy(18000,
@@ -959,5 +976,224 @@ public class Page_137 extends AppCompatActivity implements View.OnClickListener,
 //            address.setText("Could not get address..!");
         }
     }
+
+
+    private class CategoryModel {
+
+        private String CatId;
+        private String Title;
+//        private List<CategoryModel> SubCategory = new ArrayList<>();
+
+        public String getTitle() {
+            return Title;
+        }
+
+        public void setTitle(String title) {
+            Title = title;
+        }
+
+        public String getCatId() {
+            return CatId;
+        }
+
+        public void setCatId(String catId) {
+            CatId = catId;
+        }
+
+//        public List<CategoryModel> getSubCategory() {
+//            return SubCategory;
+//        }
+//
+//        public void setSubCategory(List<CategoryModel> subCategory) {
+//            SubCategory = subCategory;
+//        }
+    }
+
+
+    private void StepTwo(final String id) {
+        adapterSub.clear();
+        subCategory.clear();
+
+
+        StringRequest request1 = new StringRequest(Request.Method.POST, Globals.ApiURLAll2 + "retrieve", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                progressDialog.dismiss();
+                Log.e("StepTwo_Response", response);
+                try {
+                    JSONArray array1 = new JSONArray(response);
+
+                    if (array1.length() == 0 ) {
+                        SubCategory.setVisibility(View.GONE);
+                        return;
+                    }
+
+                    Result.clear();
+                    SubCategory.setVisibility(View.VISIBLE);
+                    SubCategoryOne.setVisibility(View.GONE);
+                    final List<CategoryModel> CategoryArray = new ArrayList<>();
+
+                    for (int i = 0; i < array1.length(); i++) {
+
+                        CategoryModel model = new CategoryModel();
+
+                        model.setCatId(array1.getJSONObject(i).getString("id"));
+//                        model.setTitle(array1.getJSONArray(i).getString(1));
+
+                        CategoryArray.add(model);
+                        subCategory.add(array1.getJSONObject(i).getString("title"));
+
+                    }
+
+
+                    adapterSub.addAll(subCategory);
+                    adapterSub.add("یک موضوع را انتخاب کنید!");
+                    SubCategory.setAdapter(adapterSub);
+                    SubCategory.setSelection(adapterSub.getCount());
+
+
+                    SubCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id1) {
+                            if (position > (subCategory.size() - 1)) {
+
+                            } else {
+                                StepThree(id, CategoryArray.get(position).getCatId());
+                            }
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Page_137.this, "با مشکلی مواجه شد لطفا دوباره تلاش کنید!", Toast.LENGTH_SHORT).show();
+                Log.e("Page137_Error", error.toString() + " |");
+                progressDialog.dismiss();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("request", "t2");
+                params.put("data", id);
+                return params;
+            }
+
+        };
+
+        request1.setRetryPolicy(new DefaultRetryPolicy(18000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        AppController.getInstance().addToRequestQueue(request1);
+
+
+    }
+
+    private void StepThree(final String idOne, final String idTwo) {
+        adapterSubOne.clear();
+        subCategoryOne.clear();
+
+        StringRequest request1 = new StringRequest(Request.Method.POST, Globals.ApiURLAll2 + "retrieve", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                progressDialog.dismiss();
+                Log.e("StepThree_Response", response);
+                try {
+                    JSONArray array1 = new JSONArray(response);
+
+                    if (array1.length() == 0 ) {
+                        SubCategoryOne.setVisibility(View.GONE);
+                        return;
+                    }
+
+                    SubCategoryOne.setVisibility(View.VISIBLE);
+
+                    final List<CategoryModel> CategoryArray = new ArrayList<>();
+
+                    for (int i = 0; i < array1.length(); i++) {
+
+                        CategoryModel model = new CategoryModel();
+
+                        model.setCatId(array1.getJSONObject(i).getString("id"));
+//                        model.setTitle(array1.getJSONArray(i).getString(1));
+
+                        CategoryArray.add(model);
+                        subCategoryOne.add(array1.getJSONObject(i).getString("title"));
+
+                    }
+
+
+                    adapterSubOne.addAll(subCategoryOne);
+                    adapterSubOne.add("یک موضوع را انتخاب کنید!");
+                    SubCategoryOne.setAdapter(adapterSubOne);
+                    SubCategoryOne.setSelection(adapterSubOne.getCount());
+
+
+                    SubCategoryOne.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            if (position > (subCategoryOne.size() - 1)) {
+
+                            } else {
+
+                                Result.add(0, idOne);
+                                Result.add(1, idTwo);
+                                Result.add(2, CategoryArray.get(position).getCatId());
+
+                            }
+
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Page_137.this, "با مشکلی مواجه شد لطفا دوباره تلاش کنید!", Toast.LENGTH_SHORT).show();
+                Log.e("Page137_Error", error.toString() + " |");
+                progressDialog.dismiss();
+            }
+        }) {
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("request", "t3");
+                params.put("dataOne", idOne);
+                params.put("dataTwo", idTwo);
+                return params;
+            }
+
+        };
+
+        request1.setRetryPolicy(new DefaultRetryPolicy(18000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        AppController.getInstance().addToRequestQueue(request1);
+
+
+    }
+
 
 }

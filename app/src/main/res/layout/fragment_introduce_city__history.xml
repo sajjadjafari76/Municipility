@@ -34,7 +34,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:gravity="center_horizontal"
                 android:textSize="@dimen/Standard_Size_Text"
                 android:textColor="#000"
                 android:text="@string/History_Text" />

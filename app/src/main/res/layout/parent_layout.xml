@@ -90,7 +90,7 @@
             android:id="@+id/Parent_Layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:expansion_expanded="false"
+            app:expansion_expanded="true"
             android:background="#ecf0f1">
 
             <!-- CONTENT -->

@@ -1,7 +1,6 @@
 package www.municipality.ir.takestanmunicipality.HostricalWorks;
 
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,7 +8,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +21,6 @@ import www.municipality.ir.takestanmunicipality.HostricalWorks.Esfarvarin.Esfarv
 import www.municipality.ir.takestanmunicipality.HostricalWorks.Khoramdasht.Khoramdasht_frag;
 import www.municipality.ir.takestanmunicipality.HostricalWorks.Markazi.Markazi_frag;
 import www.municipality.ir.takestanmunicipality.HostricalWorks.ZiaAbad.ZiaAbad_frag;
-import www.municipality.ir.takestanmunicipality.IntroduceCity.IntroduceCity_Maps;
 import www.municipality.ir.takestanmunicipality.R;
 import www.municipality.ir.takestanmunicipality.Views.CustomTextView;
 
@@ -50,7 +47,6 @@ public class Historical_Works_frag extends Fragment {
 
         recyclerView = view.findViewById(R.id.ElectronicServices_Recycler);
 
-//        title = view.findViewById(R.id.IntroduceCity_Title);
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false));
         recyclerView.setAdapter(new MyCustomAdapter(getdata()));
@@ -67,44 +63,35 @@ public class Historical_Works_frag extends Fragment {
 
         for (int i = 0; i < 11 ; i++) {
             if (i==0) {
-                String text = new String();
-                text = "بخش مرکزی";
+                String text = "تپه تاریخی خله کوه";
                 data.add(text);
             }else if (i==1) {
-                String text = new String();
-                text = "بخش خرمدشت";
+                String text =  "بقعه پیر";
                 data.add(text);
             }else if (i==2) {
-                String text = new String();
-                text = "بخش ضیاءآباد";
+                String text = "ساختمان بانک ملی";
                 data.add(text);
             }else if (i==3) {
-                String text = new String();
-                text = "بخش اسفرورین";
+                String text = "قلعه دختر ( قزقلعه )";
                 data.add(text);
             }else if (i==4) {
-                String text = new String();
-                text = "بقعه پیر";
+                String text = "میل خرم آبادی";
                 data.add(text);
             } else if (i==5) {
-                String text = new String();
-                text = "ساختمان بانک مرکزی";
+                String text = "بخش مرکزی";
                 data.add(text);
 //            }else if (i==6) {
 //                String text = new String();
 //                text = "بنای عمارت میراث فرهنگی";
 //                data.add(text);
             }else if (i==6) {
-                String text = new String();
-                text = "تپه تاریخی خله کوه";
+                String text = "بخش خرمدشت";
                 data.add(text);
             }else if (i==7) {
-                String text = new String();
-                text = "میل خرم آبادی";
+                String text ="بخش ضیاءآباد";
                 data.add(text);
             }else if (i==8) {
-                String text = new String();
-                text = "قلعه دختر ( قزقلعه )";
+                String text =  "بخش اسفرورین";
                 data.add(text);
             }
         }
@@ -137,34 +124,31 @@ public class Historical_Works_frag extends Fragment {
             holder.textView.setText(data.get(position).toString());
             switch (position) {
                 case 0:
-                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.khondo));
-                    break;
-                case 1:
-                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.yariabad));
-                    break;
-                case 2:
-                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.farsajin));
-                    break;
-                case 3:
-                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.esfarvarin));
-                    break;
-                case 4:
-                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.boqe_pir));
-                    break;
-                case 5:
-                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.bonyad_alavi));
-                    break;
-//                case 6:
-//                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.khoramabad));
-//                    break;
-                case 6:
                     holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.kale_koh));
                     break;
-                case 7:
+                case 1:
+                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.boqe_pir));
+                    break;
+                case 2:
+                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.bank_markazi));
+                    break;
+                case 3:
+                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.qiz_qaleh));
+                    break;
+                case 4:
                     holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.khoramabad));
                     break;
+                case 5:
+                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.khondo));
+                    break;
+                case 6:
+                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.yariabad));
+                    break;
+                case 7:
+                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.farsajin));
+                    break;
                 case 8:
-                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.qiz_qaleh));
+                    holder.image.setImageDrawable(ContextCompat.getDrawable(getActivity(),R.drawable.esfarvarin));
                     break;
             }
 
@@ -177,33 +161,34 @@ public class Historical_Works_frag extends Fragment {
                     transaction.addToBackStack(null).setCustomAnimations(R.anim.fadeout, R.anim.fadein);
                     switch (position) {
                         case 0:
-                            fragment = new Markazi_frag();
-                            title.setText("بخش مرکزی");
+                            fragment = new HistoricalWorks_khaleKoh();
+                            title.setText("تپه تاریخی خله کوه");
                             tag = "history";
                             break;
                         case 1:
-                            fragment = new Khoramdasht_frag();
-                            title.setText("بخش خرمدشت");
-                            tag = "history";
-                            break;
-                        case 2:
-                            fragment = new ZiaAbad_frag();
-                            title.setText("بخش ضیاءآباد");
-                            tag = "history";
-                            break;
-                        case 3:
-                            fragment = new Esfarvarin_frag();
-                            title.setText("بخش اسفرورین");
-                            tag = "history";
-                            break;
-                        case 4:
                             fragment = new HistoricalWorks_BoghePir();
                             title.setText("بقعه پیر");
                             tag = "history";
                             break;
-                        case 5:
+                        case 2:
                             fragment = new HistoricalWorks_BankMarkazi();
-                            title.setText("ساختمان بانک مرکزی");
+                            title.setText("ساختمان بانک ملی");
+                            tag = "history";
+                            break;
+                        case 3:
+                            fragment = new HistoricalWorks_Ghaledokhtar();
+                            title.setText("قلعه دختر ( قزقلعه )");
+
+                            tag = "history";
+                            break;
+                        case 4:
+                            fragment = new HistoricalWorks_KhoramAbad();
+                            title.setText("میل خرم آباد");
+                            tag = "history";
+                            break;
+                        case 5:
+                            fragment = new Markazi_frag();
+                            title.setText("بخش مرکزی");
                             tag = "position";
                             break;
 //                        case 6:
@@ -212,18 +197,18 @@ public class Historical_Works_frag extends Fragment {
 //                            tag = "maps";
 //                            break;
                         case 6:
-                            fragment = new HistoricalWorks_khaleKoh();
-                            title.setText("تپه تاریخی خله کوه");
+                            fragment = new Khoramdasht_frag();
+                            title.setText("بخش خرمدشت");
                             tag = "maps";
                             break;
                         case 7:
-                            fragment = new HistoricalWorks_KhoramAbad();
-                            title.setText("میل خرم آباد");
+                            fragment = new ZiaAbad_frag();
+                            title.setText("بخش ضیاءآباد");
                             tag = "maps";
                             break;
                         case 8:
-                            fragment = new HistoricalWorks_Ghaledokhtar();
-                            title.setText("قلعه دختر ( قزقلعه )");
+                            fragment = new Esfarvarin_frag();
+                            title.setText("بخش اسفرورین");
                             tag = "maps";
                             break;
                     }
