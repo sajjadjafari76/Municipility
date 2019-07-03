@@ -57,7 +57,7 @@ public class MyRequestAdapter extends RecyclerView.Adapter<MyRequestAdapter.myVi
 
         final ExpansionLayoutCollection expansionLayoutCollection = new ExpansionLayoutCollection();
         expansionLayoutCollection.add(holder.expansionLayout);
-        expansionLayoutCollection.openOnlyOne(false);
+        expansionLayoutCollection.openOnlyOne(true);
 
         final ParentModel model = data.get(position);
 

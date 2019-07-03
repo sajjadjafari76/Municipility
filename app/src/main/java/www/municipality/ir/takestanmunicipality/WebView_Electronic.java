@@ -41,11 +41,12 @@ public class WebView_Electronic extends AppCompatActivity {
                     webView.loadUrl("http://www.takestancity.ir/HomePage.aspx?TabID=4659&Site=DouranPortal&Lang=fa-IR");
                     break;
                 case "4":
-                    webView.loadUrl("http://www.takestancity.ir/HomePage.aspx?TabID=4660&Site=DouranPortal&Lang=fa-IR");
+//                    webView.loadUrl("http://www.takestancity.ir/HomePage.aspx?TabID=4660&Site=DouranPortal&Lang=fa-IR");
+                    webView.loadUrl("http://137.takestancity.ir");
                     break;
-                case "5":
-                    webView.loadUrl("http://137.takestancity.ir/");
-                    break;
+//                case "5":
+//                    webView.loadUrl("http://137.takestancity.ir");
+//                    break;
             }
         }
 
